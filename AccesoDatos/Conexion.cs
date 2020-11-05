@@ -79,6 +79,9 @@ namespace AccesoDatos
                     }                   
                 }
 
+                this.cerrarConexion();
+                this.comando.Dispose();
+
                 return autorizacion;
             }
             catch (Exception ex)
