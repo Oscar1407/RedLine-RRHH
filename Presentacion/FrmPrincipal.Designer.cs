@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class Inicio
+    partial class FrmPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,13 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // Inicio
+            // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Inicio";
-            this.Text = "Inicio";
+            this.Name = "FrmPrincipal";
+            this.Text = "Pantalla Inicio";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.ResumeLayout(false);
 
         }
