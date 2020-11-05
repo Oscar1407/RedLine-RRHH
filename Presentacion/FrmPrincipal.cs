@@ -27,7 +27,29 @@ namespace Presentacion
 
                 login.ShowDialog();
 
-                login.Close();
+                login.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Debe completar los campos", "Proceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmLogin login = new FrmLogin();
+
+                login.padre(this);
+
+                login.ShowDialog();
 
                 login.Dispose();
             }
