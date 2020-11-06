@@ -96,7 +96,7 @@ namespace Presentacion
                     this.capacitaciones.ShowDialog();
                     this.Dispose();
                 }
-                //agregar demás módulos para esta pare
+                //agregar demás módulos para esta parte
 
             }
             else
