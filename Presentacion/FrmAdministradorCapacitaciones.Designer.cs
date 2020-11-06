@@ -31,23 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdministradorCapacitaciones));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnNuevaCapacitacion = new System.Windows.Forms.Button();
             this.btnBuscarColaborador = new System.Windows.Forms.Button();
             this.btnConsultarLista = new System.Windows.Forms.Button();
             this.btnAgregarColaborador = new System.Windows.Forms.Button();
             this.PanelCapacitaciones = new System.Windows.Forms.Panel();
-            this.groupAgregar = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupLista = new System.Windows.Forms.GroupBox();
-            this.groupBuscar = new System.Windows.Forms.GroupBox();
-            this.groupNueva = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.PanelCapacitaciones.SuspendLayout();
-            this.groupBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,14 +55,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1408, 78);
+            this.panel1.Size = new System.Drawing.Size(1484, 78);
             this.panel1.TabIndex = 0;
             // 
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.LightGray;
             this.btnLogOut.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(1281, 20);
+            this.btnLogOut.Location = new System.Drawing.Point(1378, 20);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(94, 32);
             this.btnLogOut.TabIndex = 5;
@@ -74,29 +70,11 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::Presentacion.Properties.Resources._339_3396821_png_file_svg_download_icon_logout_transparent_png;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(1245, 20);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(30, 32);
-            this.panel2.TabIndex = 4;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel3.BackgroundImage = global::Presentacion.Properties.Resources.RedLine_logo;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(152, 72);
-            this.panel3.TabIndex = 1;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DarkGreen;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnNuevaCapacitacion);
             this.groupBox1.Controls.Add(this.btnBuscarColaborador);
             this.groupBox1.Controls.Add(this.btnConsultarLista);
@@ -106,7 +84,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(0, 78);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(274, 742);
+            this.groupBox1.Size = new System.Drawing.Size(274, 783);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acciones";
@@ -163,80 +141,59 @@
             // 
             this.PanelCapacitaciones.BackColor = System.Drawing.SystemColors.ControlDark;
             this.PanelCapacitaciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PanelCapacitaciones.Controls.Add(this.groupBuscar);
-            this.PanelCapacitaciones.Controls.Add(this.groupLista);
             this.PanelCapacitaciones.Controls.Add(this.label1);
-            this.PanelCapacitaciones.Controls.Add(this.groupAgregar);
-            this.PanelCapacitaciones.Location = new System.Drawing.Point(280, 84);
+            this.PanelCapacitaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelCapacitaciones.Location = new System.Drawing.Point(274, 78);
             this.PanelCapacitaciones.Name = "PanelCapacitaciones";
-            this.PanelCapacitaciones.Size = new System.Drawing.Size(1116, 724);
+            this.PanelCapacitaciones.Size = new System.Drawing.Size(1210, 783);
             this.PanelCapacitaciones.TabIndex = 5;
-            // 
-            // groupAgregar
-            // 
-            this.groupAgregar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupAgregar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupAgregar.Location = new System.Drawing.Point(234, 77);
-            this.groupAgregar.Name = "groupAgregar";
-            this.groupAgregar.Size = new System.Drawing.Size(694, 611);
-            this.groupAgregar.TabIndex = 0;
-            this.groupAgregar.TabStop = false;
-            this.groupAgregar.Text = "Agregar un nuevo colaborador a una capacitación";
-            this.groupAgregar.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 14);
+            this.label1.Location = new System.Drawing.Point(15, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(425, 40);
             this.label1.TabIndex = 1;
             this.label1.Text = "Modulo de Capacitaciones";
             // 
-            // groupLista
+            // panel2
             // 
-            this.groupLista.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupLista.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupLista.Location = new System.Drawing.Point(234, 77);
-            this.groupLista.Name = "groupLista";
-            this.groupLista.Size = new System.Drawing.Size(694, 611);
-            this.groupLista.TabIndex = 2;
-            this.groupLista.TabStop = false;
-            this.groupLista.Text = "Lista de colaboradores";
-            this.groupLista.Visible = false;
+            this.panel2.BackgroundImage = global::Presentacion.Properties.Resources._339_3396821_png_file_svg_download_icon_logout_transparent_png;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(1342, 20);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(30, 32);
+            this.panel2.TabIndex = 4;
             // 
-            // groupBuscar
+            // panel3
             // 
-            this.groupBuscar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBuscar.Controls.Add(this.groupNueva);
-            this.groupBuscar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBuscar.Location = new System.Drawing.Point(234, 77);
-            this.groupBuscar.Name = "groupBuscar";
-            this.groupBuscar.Size = new System.Drawing.Size(694, 611);
-            this.groupBuscar.TabIndex = 3;
-            this.groupBuscar.TabStop = false;
-            this.groupBuscar.Text = "Buscar colaborador";
-            this.groupBuscar.Visible = false;
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel3.BackgroundImage = global::Presentacion.Properties.Resources.RedLine_logo;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(152, 72);
+            this.panel3.TabIndex = 1;
             // 
-            // groupNueva
+            // button1
             // 
-            this.groupNueva.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupNueva.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupNueva.Location = new System.Drawing.Point(0, 0);
-            this.groupNueva.Name = "groupNueva";
-            this.groupNueva.Size = new System.Drawing.Size(694, 611);
-            this.groupNueva.TabIndex = 5;
-            this.groupNueva.TabStop = false;
-            this.groupNueva.Text = "Agregar nueva capacitación";
-            this.groupNueva.Visible = false;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(6, 387);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(262, 35);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Consultar Capacitación";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmAdministradorCapacitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(1408, 820);
+            this.ClientSize = new System.Drawing.Size(1484, 861);
             this.ControlBox = false;
             this.Controls.Add(this.PanelCapacitaciones);
             this.Controls.Add(this.groupBox1);
@@ -253,7 +210,6 @@
             this.groupBox1.ResumeLayout(false);
             this.PanelCapacitaciones.ResumeLayout(false);
             this.PanelCapacitaciones.PerformLayout();
-            this.groupBuscar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -271,9 +227,6 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Panel PanelCapacitaciones;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupAgregar;
-        private System.Windows.Forms.GroupBox groupLista;
-        private System.Windows.Forms.GroupBox groupBuscar;
-        private System.Windows.Forms.GroupBox groupNueva;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -52,6 +52,12 @@
     <Compile Include="FrmAdministradorCapacitaciones.Designer.cs">
       <DependentUpon>FrmAdministradorCapacitaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAgregarNuevoColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarNuevoColaborador.Designer.cs">
+      <DependentUpon>FrmAgregarNuevoColaborador.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </Compile>
     <EmbeddedResource Include="FrmAdministradorCapacitaciones.resx">
       <DependentUpon>FrmAdministradorCapacitaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarNuevoColaborador.resx">
+      <DependentUpon>FrmAgregarNuevoColaborador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
