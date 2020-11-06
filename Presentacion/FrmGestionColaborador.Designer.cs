@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class FrmAgregarNuevoColaborador
+    partial class FrmGestionColaborador
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarNuevoColaborador));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionColaborador));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -53,7 +53,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1484, 78);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 2;
             // 
             // btnLogOut
             // 
@@ -78,7 +78,7 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 78);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(274, 783);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acciones";
             // 
@@ -104,7 +104,7 @@
             this.PanelCapacitaciones.Location = new System.Drawing.Point(274, 78);
             this.PanelCapacitaciones.Name = "PanelCapacitaciones";
             this.PanelCapacitaciones.Size = new System.Drawing.Size(1210, 783);
-            this.PanelCapacitaciones.TabIndex = 6;
+            this.PanelCapacitaciones.TabIndex = 7;
             // 
             // groupBox2
             // 
@@ -116,7 +116,7 @@
             this.groupBox2.Size = new System.Drawing.Size(1164, 695);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Agregar un nuevo colaborador a una capacitación";
+            this.groupBox2.Text = "Gestión de colaboradores";
             // 
             // label1
             // 
@@ -147,7 +147,7 @@
             this.panel3.Size = new System.Drawing.Size(152, 72);
             this.panel3.TabIndex = 1;
             // 
-            // FrmAgregarNuevoColaborador
+            // FrmGestionColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,9 +160,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmAgregarNuevoColaborador";
+            this.Name = "FrmGestionColaborador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Administrador de colaboradores en capacitaciones";
+            this.Text = "Gestión colaboradores";
+            this.Load += new System.EventHandler(this.FrmGestionColaborador_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.PanelCapacitaciones.ResumeLayout(false);
@@ -178,9 +179,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel PanelCapacitaciones;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Panel PanelCapacitaciones;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label1;
     }
 }

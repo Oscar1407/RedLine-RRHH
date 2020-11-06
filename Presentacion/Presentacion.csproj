@@ -58,6 +58,48 @@
     <Compile Include="FrmAgregarNuevoColaborador.Designer.cs">
       <DependentUpon>FrmAgregarNuevoColaborador.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAgregarNuevoCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarNuevoCurso.Designer.cs">
+      <DependentUpon>FrmAgregarNuevoCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionColaborador.Designer.cs">
+      <DependentUpon>FrmGestionColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionMatricula.Designer.cs">
+      <DependentUpon>FrmGestionMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarNuevaMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarNuevaMatricula.Designer.cs">
+      <DependentUpon>FrmAgregarNuevaMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListaColaboradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListaColaboradores.Designer.cs">
+      <DependentUpon>FrmListaColaboradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListaCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListaCursos.Designer.cs">
+      <DependentUpon>FrmListaCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListaMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListaMatricula.Designer.cs">
+      <DependentUpon>FrmListaMatricula.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +124,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarNuevoColaborador.resx">
       <DependentUpon>FrmAgregarNuevoColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarNuevoCurso.resx">
+      <DependentUpon>FrmAgregarNuevoCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionColaborador.resx">
+      <DependentUpon>FrmGestionColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionMatricula.resx">
+      <DependentUpon>FrmGestionMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarNuevaMatricula.resx">
+      <DependentUpon>FrmAgregarNuevaMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListaColaboradores.resx">
+      <DependentUpon>FrmListaColaboradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListaCursos.resx">
+      <DependentUpon>FrmListaCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListaMatricula.resx">
+      <DependentUpon>FrmListaMatricula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class FrmAgregarNuevoColaborador : Form
+    public partial class FrmGestionColaborador : Form
     {
 
         FrmAdministradorCapacitaciones administradorCapacitaciones;
 
-        public FrmAgregarNuevoColaborador()
+        public FrmGestionColaborador()
         {
             InitializeComponent();
         }
@@ -32,6 +32,11 @@ namespace Presentacion
         {
             this.Close();
             this.Dispose();
+        }
+
+        private void FrmGestionColaborador_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

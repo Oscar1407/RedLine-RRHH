@@ -15,6 +15,20 @@ namespace Presentacion
 
         FrmAgregarNuevoColaborador frameAgregar;
 
+        FrmListaColaboradores frameLista;
+
+        FrmGestionColaborador frameColaborador;
+
+        FrmAgregarNuevoCurso frameCurso;
+
+        FrmListaCursos frameListaCurso;
+
+        FrmAgregarNuevaMatricula frameMatricula;
+
+        FrmGestionMatricula frameGestMatricula;
+
+        FrmListaMatricula frameListaMatricula;
+
         public FrmAdministradorCapacitaciones()
         {
             InitializeComponent();
@@ -35,7 +49,7 @@ namespace Presentacion
             try
             {
                 this.frameAgregar = new FrmAgregarNuevoColaborador();
-                this.frameAgregar.ShowDialog();
+                this.frameAgregar.Show();
                 this.Close();
                 this.Dispose();
             }
@@ -49,7 +63,10 @@ namespace Presentacion
         {
             try
             {
-
+                this.frameLista = new FrmListaColaboradores();
+                this.frameLista.Show();
+                this.Close();
+                this.Dispose();
             }
             catch (Exception ex)
             {
@@ -61,7 +78,10 @@ namespace Presentacion
         {
             try
             {
-
+                this.frameColaborador = new FrmGestionColaborador();
+                this.frameColaborador.Show();
+                this.Close();
+                this.Dispose();
             }
             catch (Exception ex)
             {
@@ -74,7 +94,70 @@ namespace Presentacion
         {
             try
             {
+                this.frameCurso = new FrmAgregarNuevoCurso();
+                this.frameCurso.Show();
+                this.Close();
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        private void btnConsultaListaCursos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.frameListaCurso = new FrmListaCursos();
+                this.frameListaCurso.Show();
+                this.Close();
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnHacerMatricula_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.frameMatricula = new FrmAgregarNuevaMatricula();
+                this.frameMatricula.Show();
+                this.Close();
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnListaMatricula_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.frameListaMatricula = new FrmListaMatricula();
+                this.frameListaMatricula.Show();
+                this.Close();
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnConsultaMatricula_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.frameGestMatricula = new FrmGestionMatricula();
+                this.frameGestMatricula.Show();
+                this.Close();
+                this.Dispose();
             }
             catch (Exception ex)
             {

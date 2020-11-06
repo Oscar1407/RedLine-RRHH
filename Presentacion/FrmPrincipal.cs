@@ -25,9 +25,7 @@ namespace Presentacion
 
                 login.padre(this);
 
-                login.ShowDialog();
-
-                login.Dispose();
+                login.Show();
 
             }
             catch (Exception ex)
@@ -49,9 +47,8 @@ namespace Presentacion
 
                 login.padre(this);
 
-                login.ShowDialog();
+                login.Show();
 
-                login.Dispose();
             }
             catch (Exception ex)
             {

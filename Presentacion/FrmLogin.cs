@@ -93,7 +93,7 @@ namespace Presentacion
                 if (this.user.rol.Equals("Administrador Capacitaciones"))
                 {
                     this.autenticado = true;
-                    this.capacitaciones.ShowDialog();
+                    this.capacitaciones.Show();
                     this.Dispose();
                 }
                 //agregar demás módulos para esta parte

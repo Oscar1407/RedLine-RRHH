@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class FrmAgregarNuevoColaborador : Form
+    public partial class FrmListaMatricula : Form
     {
 
         FrmAdministradorCapacitaciones administradorCapacitaciones;
 
-        public FrmAgregarNuevoColaborador()
+        public FrmListaMatricula()
         {
             InitializeComponent();
         }
