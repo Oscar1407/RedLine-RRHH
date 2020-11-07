@@ -89,5 +89,7 @@ namespace AccesoDatos
                 throw ex;
             }
         }
+
+        //método de agregar colaboradores
     }
 }

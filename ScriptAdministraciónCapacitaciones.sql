@@ -21,6 +21,9 @@ constraint fk_colaboradorCorreo foreign key (IDInstitucional) references [Colabo
 )
 go
 
+select * from [CorreoColaboradorCapacitaciones]
+go
+
 drop table [CorreoColaboradorCapacitaciones]
 go
 
@@ -32,6 +35,9 @@ telefono varchar(15) not null,
 primary key(IDInstitucional, telefono),
 constraint fk_colaboradorTelefono foreign key (IDInstitucional) references [ColaboradorCapacitacion] (IDInstitucional)
 )
+go
+
+select * from [TelefonoColaboradorCapacitaciones]
 go
 
 drop table [TelefonoColaboradorCapacitaciones]
@@ -73,3 +79,37 @@ go
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 --procedimientos almacenados del modulo de capacitaciones
+
+--procedimientos almacenados para agregar nuevos colaboradores
+create procedure [PA_Ins_Colaborador]
+(
+@IDInstitucional varchar(25),
+@cedula varchar(25),
+@nombre varchar(25),
+@primerApellido varchar(25),
+@segundoApellido varchar(25)
+)
+as
+insert into [ColaboradorCapacitacion](IDInstitucional, cedula, nombre, primerApellido, segundoApellido)
+values(@IDInstitucional, @cedula, @nombre, @primerApellido, @segundoApellido)
+go
+
+create procedure [PA_Ins_ColaboradorCorreo]
+(
+@IDInstitucional varchar(25),
+@correo varchar(100)
+)
+as
+insert into [CorreoColaboradorCapacitaciones](IDInstitucional, correo)
+values(@IDInstitucional, @correo)
+go
+
+create procedure [PA_Ins_ColaboradorTelefono]
+(
+@IDInstitucional varchar(25),
+@telefono varchar(100)
+)
+as
+insert into [TelefonoColaboradorCapacitaciones](IDInstitucional, telefono)
+values(@IDInstitucional, @telefono)
+go
