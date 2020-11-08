@@ -90,6 +90,189 @@ namespace AccesoDatos
             }
         }
 
-        //método de agregar colaboradores
+        //metodo de consultar existencia de colaborador
+        public int consultaExistencia(string identificador)
+        {
+            try
+            {
+                int existe = 0;
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.cnx;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Cns_ExistenciaColaborador]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", identificador);
+                this.lector = this.comando.ExecuteReader();
+
+                if (this.lector.Read())
+                {
+                    if (this.lector.GetValue(0).ToString().Equals("1"))
+                    {
+                        existe = 1;
+                    }
+                    else
+                    {
+                        existe = 0;
+                    }
+                }              
+
+                this.cerrarConexion();
+                this.comando.Dispose();
+                this.lector = null;
+
+                return existe;
+            }
+            catch (Exception ex)
+            {
+               new Exception("Debe ingresar un valor en el ID Institucional");
+               return 0;
+            }
+        }
+
+        //métodos de agregar colaborador a capacitación
+        public int guardarColaborador(Colaborador colaborador)
+        {
+            try
+            {
+                if (colaborador != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.cnx;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Ins_Colaborador]";
+
+                    this.comando.Parameters.AddWithValue("@IDInstitucional", colaborador.IDInstitucional);
+                    this.comando.Parameters.AddWithValue("@cedula", colaborador.cedula);
+                    this.comando.Parameters.AddWithValue("@nombre", colaborador.nombre);
+                    this.comando.Parameters.AddWithValue("@primerApellido", colaborador.primerApellido);
+                    this.comando.Parameters.AddWithValue("@segundoApellido", colaborador.segundoApellido);
+
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;
+            }
+        }
+
+        public int guardarCorreoColaborador(Colaborador colaborador)
+        {
+            try
+            {
+                if (colaborador != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.cnx;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Ins_ColaboradorCorreo]";
+
+                    this.comando.Parameters.AddWithValue("@IDInstitucional", colaborador.IDInstitucional);
+                    this.comando.Parameters.AddWithValue("@correo", colaborador.correo);
+                    
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;
+            }
+        }
+
+        public int guardarTelefonoColaborador(Colaborador colaborador)
+        {
+            try
+            {
+                if (colaborador != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.cnx;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Ins_ColaboradorTelefono]";
+
+                    this.comando.Parameters.AddWithValue("@IDInstitucional", colaborador.IDInstitucional);
+                    this.comando.Parameters.AddWithValue("@telefono", colaborador.telefono);
+
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;
+            }
+        }
+
+        //método de consultar colaboradores
+        public Colaborador consultaColaborador(string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.cnx;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Cns_Colaboradores]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", ID);
+                this.lector = this.comando.ExecuteReader();
+
+                Colaborador colaborador = null;
+                if (this.lector.Read())
+                {
+                    colaborador = new Colaborador();
+
+                    colaborador.IDInstitucional = ID;
+                    colaborador.cedula = this.lector.GetValue(1).ToString();
+                    colaborador.nombre = this.lector.GetValue(2).ToString();
+                    colaborador.primerApellido = this.lector.GetValue(3).ToString();
+                    colaborador.segundoApellido = this.lector.GetValue(4).ToString();
+                    colaborador.correo = this.lector.GetValue(5).ToString();
+                    colaborador.telefono = this.lector.GetValue(6).ToString();
+                }
+                else
+                {
+                    throw new Exception ("No existe ningún registro con el IDInstitucional" + ID);
+                }
+
+                this.cerrarConexion();
+                this.comando.Dispose();
+                this.lector = null;
+
+                return colaborador;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

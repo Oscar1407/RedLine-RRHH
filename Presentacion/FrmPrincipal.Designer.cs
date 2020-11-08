@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnIngresar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +47,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1207, 78);
             this.panel2.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.BackgroundImage = global::Presentacion.Properties.Resources.RedLine_logo;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(12, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(152, 72);
+            this.panel1.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -64,18 +74,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acciones";
             // 
-            // btnIngresar
-            // 
-            this.btnIngresar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnIngresar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnIngresar.Location = new System.Drawing.Point(6, 360);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(262, 37);
-            this.btnIngresar.TabIndex = 0;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = false;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
-            // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Firebrick;
@@ -88,15 +86,17 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // panel1
+            // btnIngresar
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.BackgroundImage = global::Presentacion.Properties.Resources.RedLine_logo;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(12, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(152, 72);
-            this.panel1.TabIndex = 0;
+            this.btnIngresar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnIngresar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnIngresar.Location = new System.Drawing.Point(6, 360);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(262, 37);
+            this.btnIngresar.TabIndex = 0;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // FrmPrincipal
             // 

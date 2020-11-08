@@ -11,6 +11,10 @@ segundoApellido varchar(25) not null
 )
 go
 
+drop table [ColaboradorCapacitacion]
+
+select * from [ColaboradorCapacitacion]
+
 --tabla para el correo del colaborador
 create table [CorreoColaboradorCapacitaciones]
 (
@@ -41,6 +45,9 @@ select * from [TelefonoColaboradorCapacitaciones]
 go
 
 drop table [TelefonoColaboradorCapacitaciones]
+go
+
+delete from [ColaboradorCapacitacion] 
 go
 
 --tabla de los cursos de las capacitaciones
@@ -113,3 +120,29 @@ as
 insert into [TelefonoColaboradorCapacitaciones](IDInstitucional, telefono)
 values(@IDInstitucional, @telefono)
 go
+
+--procedimiento para comprobar existencia de un colaborador repetido
+create procedure [PA_Cns_ExistenciaColaborador](@IDInstitucional varchar(25))
+as
+select count(*) as existe from [ColaboradorCapacitacion] where IDInstitucional = @IDInstitucional
+go
+
+exec [PA_Cns_ExistenciaColaborador] @IDInstitucional = '1'
+go
+
+--procedimiento almacenado para consultar colaborador por IDInstitucional
+create procedure [PA_Cns_Colaboradores](@IDInstitucional varchar(25))
+as
+select c.IDInstitucional as ID_Institucional,
+c.cedula as Cedula,
+c.nombre as Nombre,
+c.primerApellido as Primer_Apellido,
+c.segundoApellido as Segundo_Apellido,
+e.correo as Correo,
+t.telefono as Telefono
+from [ColaboradorCapacitacion] c with(nolock)
+inner join [CorreoColaboradorCapacitaciones] e with(nolock) on e.IDInstitucional = c.IDInstitucional
+inner join [TelefonoColaboradorCapacitaciones] t with(nolock) on t.IDInstitucional = c.IDInstitucional
+where c.IDInstitucional = @IDInstitucional
+go
+
