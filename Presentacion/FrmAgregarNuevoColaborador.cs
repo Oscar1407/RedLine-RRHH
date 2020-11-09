@@ -168,15 +168,68 @@ namespace Presentacion
             this.limpiarCampos();
         }
 
-        //action de cancelar
+        //accion de cancelar
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.limpiarCampos();
         }
 
+        //accion de verificar si el empleado que se agregará a capacitaciones ya existe en la BD
         private void btnVerificar_Click(object sender, EventArgs e)
         {
-            //esperar a tener los datos del modulo de nomina
+            try
+            {
+                if (string.IsNullOrEmpty(this.txtIDInstitucional.Text))
+                {
+                    MessageBox.Show("Debe ingresar el ID Institucional del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Colaborador colaborador = this.conexion.consultaNomina(this.txtIDInstitucional.Text.Trim());
+
+                    if (colaborador != null)
+                    {
+                        this.txtCedula.Text = colaborador.cedula;
+                        this.txtNombre.Text = colaborador.nombre;
+                        this.txtPrimerApellido.Text = colaborador.primerApellido;
+                        this.txtSegundoApellido.Text = colaborador.segundoApellido;
+                        this.txtCorreo.Text = colaborador.correo;
+                        this.txtTelefono.Text = colaborador.telefono;
+
+                        MessageBox.Show("Se encontró un empleado con el ID Institucional indicado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se encontró ningún colaborador con el ID Institucional indicado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new Exception("No existe ningún colaborador con ese ID Institucional");
+                this.habilitar();
+            }
+        }
+
+        //habilita los campos del formulario y los botones
+        private void habilitar()
+        {
+            this.txtCedula.Enabled = true;
+            this.txtNombre.Enabled = true;
+            this.txtPrimerApellido.Enabled = true;
+            this.txtSegundoApellido.Enabled = true;
+            this.txtCorreo.Enabled = true;
+            this.txtTelefono.Enabled = true;
+            this.btnGuardar.Enabled = true;
+        }
+
+        //deshabilita los campos del formulario y los botones
+        private void deshabilitar()
+        {
+            this.txtCedula.Enabled = false;
+            this.txtNombre.Enabled = false;
+            this.txtPrimerApellido.Enabled = false;
+            this.txtSegundoApellido.Enabled = false;
+            this.txtCorreo.Enabled = false;
+            this.txtTelefono.Enabled = false;
+            this.btnGuardar.Enabled = false;
         }
 
         //carga la clase de conexion desde que inicia la ejecucion de la pantalla
@@ -185,6 +238,7 @@ namespace Presentacion
             try
             {
                 this.conexion = new Conexion();
+                this.deshabilitar();
             }
             catch (Exception ex)
             {

@@ -1,3 +1,6 @@
+use [RedLine-DataBase]
+go
+
 --Tabla Nomina
 create table [Nomina](
 IDInstitucional varchar(25) not null primary key,
@@ -59,9 +62,9 @@ constraint fk_nominaHorario foreign key (IDInstitucional) references [Nomina](ID
 )
 go
 
-Insert into HorarioNomina(IDInstitucional, diaLaboral, horaInicio,horaFin) values('B77064','12-07-2019',7,10)
-Insert into HorarioNomina(IDInstitucional, diaLaboral, horaInicio,horaFin) values('B70988','14-08-2019',9, 3)
-Insert into HorarioNomina(IDInstitucional, diaLaboral, horaInicio,horaFin) values('B70988','16-09-2019',3,10)
+Insert into HorarioNomina(IDInstitucional, diaLaboral, horaInicio,horaFin) values('B77064','Lunes',7,10)
+Insert into HorarioNomina(IDInstitucional, diaLaboral, horaInicio,horaFin) values('B70988','Miercoles',9, 3)
+Insert into HorarioNomina(IDInstitucional, diaLaboral, horaInicio,horaFin) values('B70988','Viernes',3,10)
 Select * from HorarioNomina;
 
 --Tabla Deducciones
@@ -119,6 +122,37 @@ go
 Insert into DeduccionAguinaldo (IDDeduccion, IDInstitucional) values ('100000','B77064')
 Insert into DeduccionAguinaldo (IDDeduccion, IDInstitucional) values ('120000','B70988')
 Insert into DeduccionAguinaldo (IDDeduccion, IDInstitucional) values ('150000','B88543')
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--procedimientos almacenados de nominas
+
+--procedimiento para consultar una nomina por ID Institucional
+create procedure [PA_Cns_Nomina](@IDInstitucional varchar(25))
+as
+select n.IDInstitucional as ID_Institucional,
+n.cedula as Cedula,
+n.nombre as Nombre,
+n.primerApellido as Primer_Apellido,
+n.segundoApellido as Segundo_Apellido,
+c.correo as Correo,
+t.telefono as Telefono
+from [Nomina] n with(nolock)
+inner join [NominaCorreo] c with(nolock) on c.IDInstitucional = n.IDInstitucional
+inner join [NominaTelefono] t with(nolock) on t.IDInstitucional = n.IDInstitucional
+where n.IDInstitucional = @IDInstitucional
+go
+
+exec [PA_Cns_Nomina] @IDInstitucional = 'B77064'
+go
+
+
+
+
+
+
+
+
 
 
 

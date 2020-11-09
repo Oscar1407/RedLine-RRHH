@@ -35,11 +35,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.PanelCapacitaciones = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtgListaColaboradores = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.PanelCapacitaciones.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgListaColaboradores)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -124,6 +127,19 @@
             this.PanelCapacitaciones.Size = new System.Drawing.Size(1210, 783);
             this.PanelCapacitaciones.TabIndex = 6;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox2.Controls.Add(this.dtgListaColaboradores);
+            this.groupBox2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox2.Location = new System.Drawing.Point(16, 65);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1180, 695);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Lista de colaboradores en capacitaciones";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -134,17 +150,18 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Modulo de Capacitaciones";
             // 
-            // groupBox2
+            // dtgListaColaboradores
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox2.Location = new System.Drawing.Point(22, 74);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1164, 695);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Lista de colaboradores en capacitaciones";
+            this.dtgListaColaboradores.AllowUserToAddRows = false;
+            this.dtgListaColaboradores.AllowUserToDeleteRows = false;
+            this.dtgListaColaboradores.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dtgListaColaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgListaColaboradores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtgListaColaboradores.Location = new System.Drawing.Point(6, 60);
+            this.dtgListaColaboradores.Name = "dtgListaColaboradores";
+            this.dtgListaColaboradores.ReadOnly = true;
+            this.dtgListaColaboradores.Size = new System.Drawing.Size(1168, 592);
+            this.dtgListaColaboradores.TabIndex = 0;
             // 
             // FrmListaColaboradores
             // 
@@ -161,10 +178,13 @@
             this.Name = "FrmListaColaboradores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de colaboradores";
+            this.Load += new System.EventHandler(this.FrmListaColaboradores_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.PanelCapacitaciones.ResumeLayout(false);
             this.PanelCapacitaciones.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgListaColaboradores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,5 +200,6 @@
         private System.Windows.Forms.Panel PanelCapacitaciones;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dtgListaColaboradores;
     }
 }

@@ -232,7 +232,7 @@ namespace AccesoDatos
             }
         }
 
-        //método de consultar colaboradores
+        //método de consultar colaboradores por medio del ID Institucional
         public Colaborador consultaColaborador(string ID)
         {
             try
@@ -268,6 +268,76 @@ namespace AccesoDatos
                 this.lector = null;
 
                 return colaborador;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //procedimiento para consulta de colaborador existente en la nomina por medio del ID Institucional
+        public Colaborador consultaNomina(string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.cnx;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Cns_Nomina]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", ID);
+                this.lector = this.comando.ExecuteReader();
+
+                Colaborador colaborador = null;
+                if (this.lector.Read())
+                {
+                    colaborador = new Colaborador();
+
+                    colaborador.IDInstitucional = ID;
+                    colaborador.cedula = this.lector.GetValue(1).ToString();
+                    colaborador.nombre = this.lector.GetValue(2).ToString();
+                    colaborador.primerApellido = this.lector.GetValue(3).ToString();
+                    colaborador.segundoApellido = this.lector.GetValue(4).ToString();
+                    colaborador.correo = this.lector.GetValue(5).ToString();
+                    colaborador.telefono = this.lector.GetValue(6).ToString();
+                }
+                else
+                {
+                    throw new Exception("No existe ningún registro con el IDInstitucional" + ID);
+                }
+
+                this.cerrarConexion();
+                this.comando.Dispose();
+                this.lector = null;
+
+                return colaborador;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataSet consultaListaEmpleados()
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.cnx;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Cns_ListaColaboradores]";
+
+                this.adaptador = new SqlDataAdapter();
+                this.adaptador.SelectCommand = this.comando;
+                this.datos = new DataSet();
+                this.adaptador.Fill(this.datos);
+
+                this.cerrarConexion();
+                this.comando.Dispose();
+                this.adaptador.Dispose();
+
+                return this.datos;
             }
             catch (Exception ex)
             {

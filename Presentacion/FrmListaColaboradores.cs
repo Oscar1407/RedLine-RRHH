@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AccesoDatos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,8 @@ namespace Presentacion
     public partial class FrmListaColaboradores : Form
     {
         FrmAdministradorCapacitaciones administradorCapacitaciones;
+
+        Conexion conexion = null;
 
         public FrmListaColaboradores()
         {
@@ -31,6 +34,35 @@ namespace Presentacion
         {
             this.Close();
             this.Dispose();
+        }
+
+        private void FrmListaColaboradores_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                this.conexion = new Conexion();
+                this.consultarLista();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void consultarLista()
+        {
+            try
+            {
+                this.dtgListaColaboradores.DataSource = this.conexion.consultaListaEmpleados().Tables[0];
+                this.dtgListaColaboradores.AutoResizeColumns();
+                this.dtgListaColaboradores.ReadOnly = true;
+                this.dtgListaColaboradores.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
