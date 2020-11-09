@@ -379,9 +379,9 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
-                throw ex;
-                /*new Exception("Debe ingresar un valor en el ID Institucional");
-                return 0;*/
+                //throw ex;
+                new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;
             }
         }
 
@@ -413,10 +413,9 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
-                throw ex;
-                /*
+                //throw ex;                
                 new Exception("Debe ingresar un valor en el ID Institucional");
-                return 0;*/
+                return 0;
             }
         }
 
@@ -448,9 +447,9 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
-                throw ex;
-                /*new Exception("Debe ingresar un valor en el ID Institucional");
-                return 0;*/
+                //throw ex;
+                new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;
             }
         }
 
