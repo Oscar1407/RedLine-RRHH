@@ -15,14 +15,20 @@ drop table [ColaboradorCapacitacion]
 
 select * from [ColaboradorCapacitacion]
 
+delete from [ColaboradorCapacitacion]
+go
+
 --tabla para el correo del colaborador
 create table [CorreoColaboradorCapacitaciones]
 (
 IDInstitucional varchar(25) not null,
-correo varchar(100) not null,
+correo varchar(100),
 primary key(IDInstitucional, correo),
 constraint fk_colaboradorCorreo foreign key (IDInstitucional) references [ColaboradorCapacitacion] (IDInstitucional)
 )
+go
+
+delete from [CorreoColaboradorCapacitaciones]
 go
 
 select * from [CorreoColaboradorCapacitaciones]
@@ -35,7 +41,7 @@ go
 create table [TelefonoColaboradorCapacitaciones]
 (
 IDInstitucional varchar(25) not null,
-telefono varchar(15) not null,
+telefono varchar(15),
 primary key(IDInstitucional, telefono),
 constraint fk_colaboradorTelefono foreign key (IDInstitucional) references [ColaboradorCapacitacion] (IDInstitucional)
 )
@@ -47,7 +53,7 @@ go
 drop table [TelefonoColaboradorCapacitaciones]
 go
 
-delete from [ColaboradorCapacitacion] 
+delete from [TelefonoColaboradorCapacitaciones] 
 go
 
 --tabla de los cursos de las capacitaciones
@@ -146,3 +152,74 @@ inner join [TelefonoColaboradorCapacitaciones] t with(nolock) on t.IDInstitucion
 where c.IDInstitucional = @IDInstitucional
 go
 
+--procedimiento almacenado para consultar lista de colaboradores
+create procedure [PA_Cns_ListaColaboradores]
+as
+select c.IDInstitucional as ID_Institucional,
+c.cedula as Cedula,
+c.nombre as Nombre,
+c.primerApellido as Primer_Apellido,
+c.segundoApellido as Segundo_Apellido,
+e.correo as Correo,
+t.telefono as Telefono
+from [ColaboradorCapacitacion] c with(nolock)
+inner join [CorreoColaboradorCapacitaciones] e with(nolock) on e.IDInstitucional = c.IDInstitucional
+inner join [TelefonoColaboradorCapacitaciones] t with(nolock) on t.IDInstitucional = c.IDInstitucional
+go
+
+exec [PA_Cns_ListaColaboradores]
+go
+
+
+--procedimientos almacenados para modificar informacion de los colaboradores
+create procedure [PA_Act_Colaborador]
+(
+@IDInstitucional varchar(25),
+@cedula varchar(25),
+@nombre varchar(25),
+@primerApellido varchar(25),
+@segundoApellido varchar(25))
+as 
+update [ColaboradorCapacitacion] set
+cedula = @cedula,
+nombre = @nombre,
+primerApellido = @primerApellido,
+segundoApellido = @segundoApellido
+where IDInstitucional = @IDInstitucional
+go
+
+create procedure [PA_Act_ColaboradorCorreo]
+(
+@IDInstitucional varchar(25),
+@correo varchar(100))
+as
+update [CorreoColaboradorCapacitaciones] set
+correo = @correo
+where IDInstitucional = @IDInstitucional
+go
+
+create procedure [PA_Act_ColaboradorTelefono]
+(
+@IDInstitucional varchar(25),
+@telefono varchar(15))
+as
+update [TelefonoColaboradorCapacitaciones] set
+telefono = @telefono
+where IDInstitucional = @IDInstitucional
+go
+
+--procedimientos almacenados para eliminar un colaborador
+create procedure [PA_Eli_Colaborador](@IDInstitucional varchar(25))
+as
+delete from [ColaboradorCapacitacion] where IDInstitucional = @IDInstitucional
+go
+
+create procedure [PA_Eli_ColaboradorCorreo](@IDInstitucional varchar(25))
+as
+delete from [CorreoColaboradorCapacitaciones] where IDInstitucional = @IDInstitucional
+go
+
+create procedure [PA_Eli_ColaboradorTelefono](@IDInstitucional varchar(25))
+as
+delete from [TelefonoColaboradorCapacitaciones] where IDInstitucional = @IDInstitucional
+go

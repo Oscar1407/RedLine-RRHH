@@ -20,6 +20,10 @@ namespace LogicaNegocio
 
         public string correo { set; get; }
 
+        public string correoSecundario { set; get; }
+
         public string telefono { set; get; }
+
+        public string telefonoSecundario { set; get; }
     }
 }

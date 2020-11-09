@@ -137,23 +137,25 @@ namespace Presentacion
                 }
                 else
                 {
-                    //control de transaccion
-                    using (TransactionScope scope = new TransactionScope())
+                    if (MessageBox.Show("¿Está seguro de que quiere agregar al colaborador?", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        if (this.conexion.guardarColaborador(colaborador) == 1 && 
-                            this.conexion.guardarCorreoColaborador(colaborador) == 1 && 
-                            this.conexion.guardarTelefonoColaborador(colaborador) == 1)
+                        //control de transaccion
+                        using (TransactionScope scope = new TransactionScope())
                         {
-                            MessageBox.Show("Empleado agregado", "Proceso Aplicado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            scope.Complete();
-                        }
-                        else
-                        {
-                            MessageBox.Show("La transacción falló", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }//fin del control de transacción
+                            if (this.conexion.guardarColaborador(colaborador) == 1 &&
+                                this.conexion.guardarCorreoColaborador(colaborador) == 1 &&
+                                this.conexion.guardarTelefonoColaborador(colaborador) == 1)
+                            {
+                                MessageBox.Show("Empleado agregado", "Proceso Aplicado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                scope.Complete();
+                            }
+                            else
+                            {
+                                MessageBox.Show("La transacción falló", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }//fin del control de transacción
+                    } 
                 }
-
             }
             catch (TransactionAbortedException ex)
             {
@@ -166,12 +168,14 @@ namespace Presentacion
         {
             this.guardarColaborador();           
             this.limpiarCampos();
+            this.deshabilitar();
         }
 
         //accion de cancelar
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.limpiarCampos();
+            this.deshabilitar();
         }
 
         //accion de verificar si el empleado que se agregará a capacitaciones ya existe en la BD

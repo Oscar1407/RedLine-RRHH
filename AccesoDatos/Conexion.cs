@@ -231,6 +231,7 @@ namespace AccesoDatos
                 return 0;
             }
         }
+        /*************************************************************************************************************************************************************************************************************************/
 
         //método de consultar colaboradores por medio del ID Institucional
         public Colaborador consultaColaborador(string ID)
@@ -275,7 +276,7 @@ namespace AccesoDatos
             }
         }
 
-        //procedimiento para consulta de colaborador existente en la nomina por medio del ID Institucional
+        //metodo para consulta de colaborador existente en la nomina por medio del ID Institucional
         public Colaborador consultaNomina(string ID)
         {
             try
@@ -318,6 +319,7 @@ namespace AccesoDatos
             }
         }
 
+        //metodo que trae el dataset para llenar la tabla
         public DataSet consultaListaEmpleados()
         {
             try
@@ -344,5 +346,236 @@ namespace AccesoDatos
                 throw ex;
             }
         }
+
+        //metodos para modificar la informacion del colaborador
+        public int modificarColaborador(Colaborador colaborador)
+        {
+            try
+            {
+                if (colaborador != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.cnx;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Act_Colaborador]";
+
+                    this.comando.Parameters.AddWithValue("@IDInstitucional", colaborador.IDInstitucional);
+                    this.comando.Parameters.AddWithValue("@cedula", colaborador.cedula);
+                    this.comando.Parameters.AddWithValue("@nombre", colaborador.nombre);
+                    this.comando.Parameters.AddWithValue("@primerApellido", colaborador.primerApellido);
+                    this.comando.Parameters.AddWithValue("@segundoApellido", colaborador.segundoApellido);
+
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                /*new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;*/
+            }
+        }
+
+        public int modificarCorreoColaborador(Colaborador colaborador)
+        {
+            try
+            {
+                if (colaborador != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.cnx;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Act_ColaboradorCorreo]";
+
+                    this.comando.Parameters.AddWithValue("@IDInstitucional", colaborador.IDInstitucional);
+                    this.comando.Parameters.AddWithValue("@correo", colaborador.correo);
+
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                /*
+                new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;*/
+            }
+        }
+
+        public int modificarTelefonoColaborador(Colaborador colaborador)
+        {
+            try
+            {
+                if (colaborador != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.cnx;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Act_ColaboradorTelefono]";
+
+                    this.comando.Parameters.AddWithValue("@IDInstitucional", colaborador.IDInstitucional);
+                    this.comando.Parameters.AddWithValue("@telefono", colaborador.telefono);
+
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                /*new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;*/
+            }
+        }
+
+        //metodos para eliminar la información del colaborador
+        public void eliminarColaborador(string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.cnx;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Eli_Colaborador]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", ID);
+
+                this.comando.ExecuteNonQuery();
+                this.cerrarConexion();
+                this.comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void eliminarColaboradorCorreo(string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.cnx;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Eli_ColaboradorCorreo]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", ID);
+
+                this.comando.ExecuteNonQuery();
+                this.cerrarConexion();
+                this.comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void eliminarColaboradorTelefono(string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.cnx;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Eli_ColaboradorTelefono]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", ID);
+
+                this.comando.ExecuteNonQuery();
+                this.cerrarConexion();
+                this.comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        //método para agregar un correo secundario
+        public void agregarCorreoSecundario(Colaborador colaborador)
+        {
+            try
+            {
+                if (colaborador != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.cnx;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Ins_ColaboradorCorreo]";
+
+                    this.comando.Parameters.AddWithValue("@IDInstitucional", colaborador.IDInstitucional);
+                    this.comando.Parameters.AddWithValue("@correo", colaborador.correoSecundario);
+
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Debe ingresar un valor en el ID Institucional");
+            }
+        }
+
+        //método para agregar un telefono secundario
+        public void agregarTelefonoSecundario(Colaborador colaborador)
+        {
+            try
+            {
+                if (colaborador != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.cnx;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Ins_ColaboradorTelefono]";
+
+                    this.comando.Parameters.AddWithValue("@IDInstitucional", colaborador.IDInstitucional);
+                    this.comando.Parameters.AddWithValue("@telefono", colaborador.telefonoSecundario);
+
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Debe ingresar un valor en el ID Institucional");
+            }
+        }
+        /*************************************************************************************************************************************************************************************************************************/
     }
 }
