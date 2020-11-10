@@ -50,29 +50,7 @@ namespace Presentacion
         /************************************************************************************************************************************************************************************************************************/
 
         /************************************************************************************************************************************************************************************************************************/
-        //método para hacer las opciones secundarias invisibles
-        private void invisibleSecundario()
-        {
-            this.lblCorreoSecundario.Visible = false;
-            this.txtCorreoSecundario.Visible = false;
 
-            this.lblTelefonoSecundario.Visible = false;
-            this.txtTelefonoSecundario.Visible = false;
-        }
-
-        //método para hacer las opciones secundarias visibles
-        private void visibleCorreoSecundario()
-        {
-            this.lblCorreoSecundario.Visible = true;
-            this.txtCorreoSecundario.Visible = true;
-        }
-
-        private void visibleTelefonoSecundario()
-        {
-            this.lblTelefonoSecundario.Visible = true;
-            this.txtTelefonoSecundario.Visible = true;
-        }
- 
         //habilita los campos del formulario y los botones
         private void habilitar()
         {
@@ -82,12 +60,8 @@ namespace Presentacion
             this.txtSegundoApellido.Enabled = true;
             this.txtCorreo.Enabled = true;
             this.txtTelefono.Enabled = true;
-            this.txtCorreoSecundario.Enabled = true;
-            this.txtTelefonoSecundario.Enabled = true;
             this.btnModificar.Enabled = true;
             this.btnEliminar.Enabled = true;
-            this.btnMostrarCorreo.Enabled = true;
-            this.btnMostrarTelefono.Enabled = true;
         }
 
         //deshabilita los campos del formulario y los botones
@@ -99,12 +73,8 @@ namespace Presentacion
             this.txtSegundoApellido.Enabled = false;
             this.txtCorreo.Enabled = false;
             this.txtTelefono.Enabled = false;
-            this.txtCorreoSecundario.Enabled = false;
-            this.txtTelefonoSecundario.Enabled = false;
             this.btnModificar.Enabled = false;
             this.btnEliminar.Enabled = false;
-            this.btnMostrarCorreo.Enabled = false;
-            this.btnMostrarTelefono.Enabled = false;
         }
 
         //metodo para limpiar los campos
@@ -117,8 +87,6 @@ namespace Presentacion
             this.txtSegundoApellido.Clear();
             this.txtCorreo.Clear();
             this.txtTelefono.Clear();
-            this.txtCorreoSecundario.Clear();
-            this.txtTelefonoSecundario.Clear();
         }
 
         public void modificarColaborador()
@@ -191,18 +159,6 @@ namespace Presentacion
                     this.colaborador.telefono = this.txtTelefono.Text.Trim();
                 }
 
-                //verifica que el correo secundario contenga algo
-                if (!string.IsNullOrEmpty(this.txtCorreoSecundario.Text))
-                {
-                    this.colaborador.correoSecundario = this.txtCorreoSecundario.Text.Trim();
-                }
-
-                //verifica que el telefono secundario contenga algo
-                if (!string.IsNullOrEmpty(this.txtTelefonoSecundario.Text))
-                {
-                    this.colaborador.telefonoSecundario = this.txtTelefonoSecundario.Text.Trim();                   
-                }
-
                 if (MessageBox.Show("¿Está seguro de que quiere modificar al colaborador?", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     //control de transaccion
@@ -212,8 +168,6 @@ namespace Presentacion
                         this.conexion.modificarCorreoColaborador(colaborador) == 1 &&
                         this.conexion.modificarTelefonoColaborador(colaborador) == 1)
                         {
-                            this.conexion.agregarCorreoSecundario(colaborador);
-                            this.conexion.agregarTelefonoSecundario(colaborador);
                             MessageBox.Show("Colaborador modificado con éxito", "Proceso Aplicado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             scope.Complete();
                         }
@@ -238,7 +192,6 @@ namespace Presentacion
             {
                 this.conexion = new Conexion();
                 this.deshabilitar();
-                this.invisibleSecundario();
             }
             catch (Exception ex)
             {
@@ -246,21 +199,10 @@ namespace Presentacion
             }
         }
 
-        private void btnMostrarCorreo_Click(object sender, EventArgs e)
-        {
-            this.visibleCorreoSecundario();
-        }
-
-        private void btnMostrarTelefono_Click(object sender, EventArgs e)
-        {
-            this.visibleTelefonoSecundario();
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.limpiarCampos();
             this.deshabilitar();
-            this.invisibleSecundario();
             this.txtIDInstitucional.Enabled = true;
         }
 
@@ -315,7 +257,6 @@ namespace Presentacion
                         MessageBox.Show("Colaborador eliminado", "Proceso Aplicado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.limpiarCampos();
                         this.deshabilitar();
-                        this.invisibleSecundario();
                         this.txtIDInstitucional.Enabled = true;
                     }
                 }               
@@ -330,7 +271,6 @@ namespace Presentacion
         {
             this.modificarColaborador();
             this.limpiarCampos();
-            this.invisibleSecundario();
             this.deshabilitar();
             this.txtIDInstitucional.Enabled = true;
         }

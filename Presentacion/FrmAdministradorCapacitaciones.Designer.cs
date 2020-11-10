@@ -31,7 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdministradorCapacitaciones));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnConsultaMatricula = new System.Windows.Forms.Button();
             this.btnListaMatricula = new System.Windows.Forms.Button();
             this.btnHacerMatricula = new System.Windows.Forms.Button();
             this.btnConsultaListaCursos = new System.Windows.Forms.Button();
@@ -41,9 +44,7 @@
             this.btnAgregarColaborador = new System.Windows.Forms.Button();
             this.PanelCapacitaciones = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnConsultaMatricula = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.PanelCapacitaciones.SuspendLayout();
@@ -73,10 +74,30 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Presentacion.Properties.Resources._339_3396821_png_file_svg_download_icon_logout_transparent_png;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(1342, 20);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(30, 32);
+            this.panel2.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel3.BackgroundImage = global::Presentacion.Properties.Resources.RedLine_logo;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(152, 72);
+            this.panel3.TabIndex = 1;
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DarkGreen;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnConsultaMatricula);
             this.groupBox1.Controls.Add(this.btnListaMatricula);
             this.groupBox1.Controls.Add(this.btnHacerMatricula);
@@ -95,11 +116,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acciones";
             // 
+            // btnConsultaMatricula
+            // 
+            this.btnConsultaMatricula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultaMatricula.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnConsultaMatricula.Location = new System.Drawing.Point(6, 586);
+            this.btnConsultaMatricula.Name = "btnConsultaMatricula";
+            this.btnConsultaMatricula.Size = new System.Drawing.Size(262, 35);
+            this.btnConsultaMatricula.TabIndex = 7;
+            this.btnConsultaMatricula.Text = "Consultar matrícula";
+            this.btnConsultaMatricula.UseVisualStyleBackColor = true;
+            this.btnConsultaMatricula.Click += new System.EventHandler(this.btnConsultaMatricula_Click);
+            // 
             // btnListaMatricula
             // 
             this.btnListaMatricula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListaMatricula.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnListaMatricula.Location = new System.Drawing.Point(6, 580);
+            this.btnListaMatricula.Location = new System.Drawing.Point(6, 653);
             this.btnListaMatricula.Name = "btnListaMatricula";
             this.btnListaMatricula.Size = new System.Drawing.Size(262, 35);
             this.btnListaMatricula.TabIndex = 6;
@@ -111,7 +144,7 @@
             // 
             this.btnHacerMatricula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHacerMatricula.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnHacerMatricula.Location = new System.Drawing.Point(6, 451);
+            this.btnHacerMatricula.Location = new System.Drawing.Point(6, 519);
             this.btnHacerMatricula.Name = "btnHacerMatricula";
             this.btnHacerMatricula.Size = new System.Drawing.Size(262, 35);
             this.btnHacerMatricula.TabIndex = 5;
@@ -139,7 +172,7 @@
             this.btnNuevaCapacitacion.Name = "btnNuevaCapacitacion";
             this.btnNuevaCapacitacion.Size = new System.Drawing.Size(262, 35);
             this.btnNuevaCapacitacion.TabIndex = 3;
-            this.btnNuevaCapacitacion.Text = "Nuevo curso";
+            this.btnNuevaCapacitacion.Text = "Agregar nuevos cursos";
             this.btnNuevaCapacitacion.UseVisualStyleBackColor = true;
             this.btnNuevaCapacitacion.Click += new System.EventHandler(this.btnNuevaCapacitacion_Click);
             // 
@@ -200,36 +233,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Modulo de Capacitaciones";
             // 
-            // btnConsultaMatricula
+            // button1
             // 
-            this.btnConsultaMatricula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultaMatricula.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnConsultaMatricula.Location = new System.Drawing.Point(6, 516);
-            this.btnConsultaMatricula.Name = "btnConsultaMatricula";
-            this.btnConsultaMatricula.Size = new System.Drawing.Size(262, 35);
-            this.btnConsultaMatricula.TabIndex = 7;
-            this.btnConsultaMatricula.Text = "Consultar matrícula";
-            this.btnConsultaMatricula.UseVisualStyleBackColor = true;
-            this.btnConsultaMatricula.Click += new System.EventHandler(this.btnConsultaMatricula_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::Presentacion.Properties.Resources._339_3396821_png_file_svg_download_icon_logout_transparent_png;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(1342, 20);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(30, 32);
-            this.panel2.TabIndex = 4;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel3.BackgroundImage = global::Presentacion.Properties.Resources.RedLine_logo;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(152, 72);
-            this.panel3.TabIndex = 1;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(3, 452);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(262, 35);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Administrar horarios de los cursos";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmAdministradorCapacitaciones
             // 
@@ -274,5 +287,6 @@
         private System.Windows.Forms.Button btnHacerMatricula;
         private System.Windows.Forms.Button btnListaMatricula;
         private System.Windows.Forms.Button btnConsultaMatricula;
+        private System.Windows.Forms.Button button1;
     }
 }

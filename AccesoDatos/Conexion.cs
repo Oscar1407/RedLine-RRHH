@@ -90,6 +90,7 @@ namespace AccesoDatos
             }
         }
 
+        /*************************************************************************************************************************************************************************************************************************/
         //metodo de consultar existencia de colaborador
         public int consultaExistencia(string identificador)
         {
@@ -231,8 +232,7 @@ namespace AccesoDatos
                 return 0;
             }
         }
-        /*************************************************************************************************************************************************************************************************************************/
-
+        
         //método de consultar colaboradores por medio del ID Institucional
         public Colaborador consultaColaborador(string ID)
         {
@@ -521,7 +521,7 @@ namespace AccesoDatos
         }
 
         //método para agregar un correo secundario
-        public void agregarCorreoSecundario(Colaborador colaborador)
+        /*public void agregarCorreoSecundario(Colaborador colaborador)
         {
             try
             {
@@ -574,7 +574,84 @@ namespace AccesoDatos
             {
                 new Exception("Debe ingresar un valor en el ID Institucional");
             }
-        }
+        }*/
         /*************************************************************************************************************************************************************************************************************************/
+
+        //metodo para controlar existencia del curso
+        public int consultaExistenciaCurso(string identificador)
+        {
+            try
+            {
+                int existe = 0;
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.cnx;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Cns_ExistenciaCurso]";
+                this.comando.Parameters.AddWithValue("@IDCurso", identificador);
+                this.lector = this.comando.ExecuteReader();
+
+                if (this.lector.Read())
+                {
+                    if (this.lector.GetValue(0).ToString().Equals("1"))
+                    {
+                        existe = 1;
+                    }
+                    else
+                    {
+                        existe = 0;
+                    }
+                }
+
+                this.cerrarConexion();
+                this.comando.Dispose();
+                this.lector = null;
+
+                return existe;
+            }
+            catch (Exception ex)
+            {
+                new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;
+            }
+        }
+
+        //metodo para agregar un nuevo curso a la bd
+        public int agregarCurso(Curso curso)
+        {
+            try
+            {
+                if (curso != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.cnx;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Ins_Curso]";
+
+                    this.comando.Parameters.AddWithValue("@IDCurso", curso.IDCurso);
+                    this.comando.Parameters.AddWithValue("@nombreCurso", curso.nombreCurso);
+                    this.comando.Parameters.AddWithValue("@duracion", curso.duracion);
+
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                /*new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;*/
+            }
+        }
+
+
     }
 }

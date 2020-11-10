@@ -37,10 +37,20 @@
             this.btnRegresar = new System.Windows.Forms.Button();
             this.PanelCapacitaciones = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDuracion = new System.Windows.Forms.TextBox();
+            this.txtNombreCurso = new System.Windows.Forms.TextBox();
+            this.txtIDCurso = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.PanelCapacitaciones.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -128,14 +138,113 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox2.Controls.Add(this.btnCancelar);
+            this.groupBox2.Controls.Add(this.btnGuardar);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.txtDuracion);
+            this.groupBox2.Controls.Add(this.txtNombreCurso);
+            this.groupBox2.Controls.Add(this.txtIDCurso);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox2.Location = new System.Drawing.Point(22, 74);
+            this.groupBox2.Location = new System.Drawing.Point(126, 152);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1164, 695);
+            this.groupBox2.Size = new System.Drawing.Size(917, 489);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar un nuevo curso";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelar.Location = new System.Drawing.Point(495, 373);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(141, 33);
+            this.btnCancelar.TabIndex = 20;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnGuardar.Location = new System.Drawing.Point(273, 373);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(141, 33);
+            this.btnGuardar.TabIndex = 19;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(492, 242);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 18);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Meses";
+            // 
+            // txtDuracion
+            // 
+            this.txtDuracion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDuracion.Location = new System.Drawing.Point(336, 239);
+            this.txtDuracion.Name = "txtDuracion";
+            this.txtDuracion.Size = new System.Drawing.Size(150, 26);
+            this.txtDuracion.TabIndex = 12;
+            // 
+            // txtNombreCurso
+            // 
+            this.txtNombreCurso.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCurso.Location = new System.Drawing.Point(336, 168);
+            this.txtNombreCurso.Name = "txtNombreCurso";
+            this.txtNombreCurso.Size = new System.Drawing.Size(360, 26);
+            this.txtNombreCurso.TabIndex = 11;
+            // 
+            // txtIDCurso
+            // 
+            this.txtIDCurso.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDCurso.Location = new System.Drawing.Point(336, 86);
+            this.txtIDCurso.Name = "txtIDCurso";
+            this.txtIDCurso.Size = new System.Drawing.Size(360, 26);
+            this.txtIDCurso.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(129, 242);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 18);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Duración";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(129, 171);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(131, 18);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Nombre del curso";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(129, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(160, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Identificador del curso";
             // 
             // label1
             // 
@@ -163,10 +272,13 @@
             this.Name = "FrmAgregarNuevoCurso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrador de cursos";
+            this.Load += new System.EventHandler(this.FrmAgregarNuevoCurso_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.PanelCapacitaciones.ResumeLayout(false);
             this.PanelCapacitaciones.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -182,5 +294,14 @@
         private System.Windows.Forms.Panel PanelCapacitaciones;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtDuracion;
+        private System.Windows.Forms.TextBox txtNombreCurso;
+        private System.Windows.Forms.TextBox txtIDCurso;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

@@ -37,14 +37,7 @@
             this.btnRegresar = new System.Windows.Forms.Button();
             this.PanelCapacitaciones = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtTelefonoSecundario = new System.Windows.Forms.MaskedTextBox();
-            this.lblTelefonoSecundario = new System.Windows.Forms.Label();
-            this.btnMostrarTelefono = new System.Windows.Forms.Button();
-            this.txtCorreoSecundario = new System.Windows.Forms.TextBox();
-            this.lblCorreoSecundario = new System.Windows.Forms.Label();
-            this.btnMostrarCorreo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -63,6 +56,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.PanelCapacitaciones.SuspendLayout();
@@ -154,12 +148,6 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox2.Controls.Add(this.txtTelefonoSecundario);
-            this.groupBox2.Controls.Add(this.lblTelefonoSecundario);
-            this.groupBox2.Controls.Add(this.btnMostrarTelefono);
-            this.groupBox2.Controls.Add(this.txtCorreoSecundario);
-            this.groupBox2.Controls.Add(this.lblCorreoSecundario);
-            this.groupBox2.Controls.Add(this.btnMostrarCorreo);
             this.groupBox2.Controls.Add(this.btnEliminar);
             this.groupBox2.Controls.Add(this.txtTelefono);
             this.groupBox2.Controls.Add(this.txtCedula);
@@ -181,99 +169,25 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox2.Location = new System.Drawing.Point(22, 74);
+            this.groupBox2.Location = new System.Drawing.Point(104, 75);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1174, 671);
+            this.groupBox2.Size = new System.Drawing.Size(1018, 671);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar un nuevo colaborador a una capacitación";
-            // 
-            // txtTelefonoSecundario
-            // 
-            this.txtTelefonoSecundario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefonoSecundario.Location = new System.Drawing.Point(778, 442);
-            this.txtTelefonoSecundario.Mask = "99999999";
-            this.txtTelefonoSecundario.Name = "txtTelefonoSecundario";
-            this.txtTelefonoSecundario.Size = new System.Drawing.Size(150, 26);
-            this.txtTelefonoSecundario.TabIndex = 26;
-            this.txtTelefonoSecundario.ValidatingType = typeof(int);
-            // 
-            // lblTelefonoSecundario
-            // 
-            this.lblTelefonoSecundario.AutoSize = true;
-            this.lblTelefonoSecundario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefonoSecundario.Location = new System.Drawing.Point(625, 445);
-            this.lblTelefonoSecundario.Name = "lblTelefonoSecundario";
-            this.lblTelefonoSecundario.Size = new System.Drawing.Size(147, 18);
-            this.lblTelefonoSecundario.TabIndex = 25;
-            this.lblTelefonoSecundario.Text = "Teléfono secundario";
-            // 
-            // btnMostrarTelefono
-            // 
-            this.btnMostrarTelefono.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMostrarTelefono.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarTelefono.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMostrarTelefono.Location = new System.Drawing.Point(628, 376);
-            this.btnMostrarTelefono.Name = "btnMostrarTelefono";
-            this.btnMostrarTelefono.Size = new System.Drawing.Size(258, 33);
-            this.btnMostrarTelefono.TabIndex = 24;
-            this.btnMostrarTelefono.Text = "Agregar teléfono secundario";
-            this.btnMostrarTelefono.UseVisualStyleBackColor = true;
-            this.btnMostrarTelefono.Click += new System.EventHandler(this.btnMostrarTelefono_Click);
-            // 
-            // txtCorreoSecundario
-            // 
-            this.txtCorreoSecundario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreoSecundario.Location = new System.Drawing.Point(841, 185);
-            this.txtCorreoSecundario.Name = "txtCorreoSecundario";
-            this.txtCorreoSecundario.Size = new System.Drawing.Size(300, 26);
-            this.txtCorreoSecundario.TabIndex = 23;
-            // 
-            // lblCorreoSecundario
-            // 
-            this.lblCorreoSecundario.AutoSize = true;
-            this.lblCorreoSecundario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreoSecundario.Location = new System.Drawing.Point(625, 185);
-            this.lblCorreoSecundario.Name = "lblCorreoSecundario";
-            this.lblCorreoSecundario.Size = new System.Drawing.Size(218, 18);
-            this.lblCorreoSecundario.TabIndex = 22;
-            this.lblCorreoSecundario.Text = "Correo electrónico secundario";
-            // 
-            // btnMostrarCorreo
-            // 
-            this.btnMostrarCorreo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMostrarCorreo.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarCorreo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMostrarCorreo.Location = new System.Drawing.Point(628, 123);
-            this.btnMostrarCorreo.Name = "btnMostrarCorreo";
-            this.btnMostrarCorreo.Size = new System.Drawing.Size(258, 33);
-            this.btnMostrarCorreo.TabIndex = 21;
-            this.btnMostrarCorreo.Text = "Agregar correo secundario";
-            this.btnMostrarCorreo.UseVisualStyleBackColor = true;
-            this.btnMostrarCorreo.Click += new System.EventHandler(this.btnMostrarCorreo_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEliminar.Location = new System.Drawing.Point(517, 520);
+            this.btnEliminar.Location = new System.Drawing.Point(437, 520);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(131, 33);
             this.btnEliminar.TabIndex = 20;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(778, 322);
-            this.txtTelefono.Mask = "99999999";
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(150, 26);
-            this.txtTelefono.TabIndex = 19;
-            this.txtTelefono.ValidatingType = typeof(int);
             // 
             // txtCedula
             // 
@@ -304,7 +218,7 @@
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelar.Location = new System.Drawing.Point(875, 520);
+            this.btnCancelar.Location = new System.Drawing.Point(801, 520);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(131, 33);
             this.btnCancelar.TabIndex = 16;
@@ -317,7 +231,7 @@
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnModificar.Location = new System.Drawing.Point(199, 520);
+            this.btnModificar.Location = new System.Drawing.Point(95, 520);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(131, 33);
             this.btnModificar.TabIndex = 15;
@@ -328,7 +242,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(841, 63);
+            this.txtCorreo.Location = new System.Drawing.Point(697, 295);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(300, 26);
             this.txtCorreo.TabIndex = 13;
@@ -369,7 +283,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(625, 325);
+            this.label9.Location = new System.Drawing.Point(554, 384);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 18);
             this.label9.TabIndex = 7;
@@ -379,7 +293,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(625, 66);
+            this.label8.Location = new System.Drawing.Point(554, 298);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(137, 18);
             this.label8.TabIndex = 6;
@@ -453,6 +367,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Modulo de Capacitaciones";
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(697, 381);
+            this.txtTelefono.Mask = "99999999";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(150, 26);
+            this.txtTelefono.TabIndex = 19;
+            this.txtTelefono.ValidatingType = typeof(int);
+            // 
             // FrmGestionColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,7 +416,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.MaskedTextBox txtTelefono;
         private System.Windows.Forms.MaskedTextBox txtCedula;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCancelar;
@@ -510,11 +433,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox txtTelefonoSecundario;
-        private System.Windows.Forms.Label lblTelefonoSecundario;
-        private System.Windows.Forms.Button btnMostrarTelefono;
-        private System.Windows.Forms.TextBox txtCorreoSecundario;
-        private System.Windows.Forms.Label lblCorreoSecundario;
-        private System.Windows.Forms.Button btnMostrarCorreo;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
     }
 }
