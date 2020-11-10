@@ -71,6 +71,12 @@
     <Compile Include="FrmGestionColaborador.Designer.cs">
       <DependentUpon>FrmGestionColaborador.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGestionCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionCursos.Designer.cs">
+      <DependentUpon>FrmGestionCursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionMatricula.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionColaborador.resx">
       <DependentUpon>FrmGestionColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionCursos.resx">
+      <DependentUpon>FrmGestionCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionMatricula.resx">
       <DependentUpon>FrmGestionMatricula.cs</DependentUpon>
