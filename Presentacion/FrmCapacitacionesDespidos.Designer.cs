@@ -30,6 +30,7 @@
         {
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnContraDesp = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@
             this.btnNomina = new System.Windows.Forms.Button();
             this.lblSubT = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxBuscarAsp = new System.Windows.Forms.PictureBox();
             this.cboxPuestoAs = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -64,17 +66,15 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxInsta = new System.Windows.Forms.PictureBox();
             this.pictureBoxFace = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBuscarAsp = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarAsp)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFace)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarAsp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -99,6 +99,16 @@
             this.lblTitulo.Size = new System.Drawing.Size(345, 37);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "Recursos Hummanos";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.RedLine_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(103, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // pnlMenu
             // 
@@ -211,6 +221,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(801, 441);
             this.panel1.TabIndex = 3;
+            // 
+            // pictureBoxBuscarAsp
+            // 
+            this.pictureBoxBuscarAsp.Image = global::Presentacion.Properties.Resources._16__Search_;
+            this.pictureBoxBuscarAsp.Location = new System.Drawing.Point(537, 52);
+            this.pictureBoxBuscarAsp.Name = "pictureBoxBuscarAsp";
+            this.pictureBoxBuscarAsp.Size = new System.Drawing.Size(30, 28);
+            this.pictureBoxBuscarAsp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBuscarAsp.TabIndex = 24;
+            this.pictureBoxBuscarAsp.TabStop = false;
             // 
             // cboxPuestoAs
             // 
@@ -471,32 +491,13 @@
             this.pictureBoxFace.TabIndex = 0;
             this.pictureBoxFace.TabStop = false;
             // 
-            // pictureBoxBuscarAsp
-            // 
-            this.pictureBoxBuscarAsp.Image = global::Presentacion.Properties.Resources._16__Search_;
-            this.pictureBoxBuscarAsp.Location = new System.Drawing.Point(537, 52);
-            this.pictureBoxBuscarAsp.Name = "pictureBoxBuscarAsp";
-            this.pictureBoxBuscarAsp.Size = new System.Drawing.Size(30, 28);
-            this.pictureBoxBuscarAsp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxBuscarAsp.TabIndex = 24;
-            this.pictureBoxBuscarAsp.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.RedLine_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(103, 56);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // FrmContratacionesDespidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(801, 690);
+            this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblSubT);
@@ -504,19 +505,20 @@
             this.Controls.Add(this.pnlTitulo);
             this.MinimizeBox = false;
             this.Name = "FrmContratacionesDespidos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulo de contrataciones y depsidos";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarAsp)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFace)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarAsp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
