@@ -12,8 +12,10 @@ segundoApellido varchar(25) not null
 go
 
 drop table [ColaboradorCapacitacion]
+go
 
 select * from [ColaboradorCapacitacion]
+go
 
 delete from [ColaboradorCapacitacion]
 go
@@ -65,6 +67,9 @@ duracion varchar(45) not null
 )
 go
 
+select * from [Curso]
+go
+
 --tabla de los horarios del curso de las capacitaciones
 create table [HorarioCurso]
 (
@@ -72,8 +77,12 @@ IDCurso varchar(25),
 dia varchar(15),
 horaInicio int,
 horaFin int,
+primary key (IDCurso, dia),
 constraint fk_d_HorarioCurso foreign key (IDCurso) references [Curso] (IDCurso)
 )
+go
+
+drop table [HorarioCurso]
 go
 
 --tabla de la matricula
@@ -223,3 +232,36 @@ create procedure [PA_Eli_ColaboradorTelefono](@IDInstitucional varchar(25))
 as
 delete from [TelefonoColaboradorCapacitaciones] where IDInstitucional = @IDInstitucional
 go
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--procedimientos almacenados para el modulo de cursos
+
+--procedimiento almacenado para guardar cursos
+create procedure [PA_Ins_Curso]
+(
+@IDCurso varchar(25),
+@nombreCurso varchar(50),
+@duracion varchar(45))
+as
+insert into [Curso](IDCurso, nombreCurso, duracion)
+values(@IDCurso, @nombreCurso, @duracion)
+go
+
+--procedimiento para consultar un curso por ID
+create procedure [PA_Cns_ExistenciaCurso](@IDCurso varchar(25))
+as
+select count(*) from [Curso] where IDCurso = @IDCurso
+go
+
+--procedimiento para consultar la información de un curso
+create procedure [PA_Cns_Curso](@IDCurso varchar(25))
+as
+select IDCurso as Identificador,
+nombreCurso as Nombre_del_curso,
+duracion as Duración
+from [Curso]
+where IDCurso = @IDCurso
+go
+
+

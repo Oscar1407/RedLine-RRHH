@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class FrmGestionColaborador
+    partial class FrmGestionCursos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionColaborador));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionCursos));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.PanelCapacitaciones = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
-            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtSegundoApellido = new System.Windows.Forms.TextBox();
-            this.txtPrimerApellido = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtIDInstitucional = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btnGuardarHorario = new System.Windows.Forms.Button();
+            this.txtDuracion = new System.Windows.Forms.TextBox();
+            this.txtNombreCurso = new System.Windows.Forms.TextBox();
+            this.txtIDCurso = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDia = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtHoraInicio = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtHoraFin = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.PanelCapacitaciones.SuspendLayout();
@@ -73,7 +72,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1484, 78);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 3;
             // 
             // btnLogOut
             // 
@@ -87,6 +86,25 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Presentacion.Properties.Resources._339_3396821_png_file_svg_download_icon_logout_transparent_png;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(1342, 20);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(30, 32);
+            this.panel2.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel3.BackgroundImage = global::Presentacion.Properties.Resources.RedLine_logo;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(152, 72);
+            this.panel3.TabIndex = 1;
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DarkGreen;
@@ -98,7 +116,7 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 78);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(274, 783);
-            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acciones";
             // 
@@ -124,28 +142,27 @@
             this.PanelCapacitaciones.Location = new System.Drawing.Point(274, 78);
             this.PanelCapacitaciones.Name = "PanelCapacitaciones";
             this.PanelCapacitaciones.Size = new System.Drawing.Size(1210, 783);
-            this.PanelCapacitaciones.TabIndex = 7;
+            this.PanelCapacitaciones.TabIndex = 8;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox2.Controls.Add(this.txtHoraFin);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.txtHoraInicio);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtDia);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.btnEliminar);
-            this.groupBox2.Controls.Add(this.txtTelefono);
-            this.groupBox2.Controls.Add(this.txtCedula);
             this.groupBox2.Controls.Add(this.btnBuscar);
             this.groupBox2.Controls.Add(this.btnCancelar);
-            this.groupBox2.Controls.Add(this.btnModificar);
-            this.groupBox2.Controls.Add(this.txtCorreo);
-            this.groupBox2.Controls.Add(this.txtSegundoApellido);
-            this.groupBox2.Controls.Add(this.txtPrimerApellido);
-            this.groupBox2.Controls.Add(this.txtNombre);
-            this.groupBox2.Controls.Add(this.txtIDInstitucional);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.btnGuardarHorario);
+            this.groupBox2.Controls.Add(this.txtDuracion);
+            this.groupBox2.Controls.Add(this.txtNombreCurso);
+            this.groupBox2.Controls.Add(this.txtIDCurso);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -155,54 +172,31 @@
             this.groupBox2.Size = new System.Drawing.Size(1018, 671);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Gestionar la información de un colaborador";
+            this.groupBox2.Text = "Gestionar la información de un curso";
             // 
             // btnEliminar
             // 
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEliminar.Location = new System.Drawing.Point(437, 520);
+            this.btnEliminar.Location = new System.Drawing.Point(449, 520);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(131, 33);
             this.btnEliminar.TabIndex = 20;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(697, 381);
-            this.txtTelefono.Mask = "99999999";
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(150, 26);
-            this.txtTelefono.TabIndex = 19;
-            this.txtTelefono.ValidatingType = typeof(int);
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
-            this.txtCedula.Location = new System.Drawing.Point(180, 135);
-            this.txtCedula.Mask = "999999999";
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(150, 26);
-            this.txtCedula.TabIndex = 18;
-            this.txtCedula.ValidatingType = typeof(int);
             // 
             // btnBuscar
             // 
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscar.Location = new System.Drawing.Point(387, 58);
+            this.btnBuscar.Location = new System.Drawing.Point(327, 54);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(204, 33);
+            this.btnBuscar.Size = new System.Drawing.Size(188, 33);
             this.btnBuscar.TabIndex = 17;
-            this.btnBuscar.Text = "Buscar colaborador";
+            this.btnBuscar.Text = "Buscar curso";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnCancelar
             // 
@@ -215,80 +209,42 @@
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnModificar
+            // btnGuardarHorario
             // 
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnModificar.Location = new System.Drawing.Point(95, 520);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(131, 33);
-            this.btnModificar.TabIndex = 15;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnGuardarHorario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarHorario.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarHorario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnGuardarHorario.Location = new System.Drawing.Point(95, 520);
+            this.btnGuardarHorario.Name = "btnGuardarHorario";
+            this.btnGuardarHorario.Size = new System.Drawing.Size(158, 33);
+            this.btnGuardarHorario.TabIndex = 15;
+            this.btnGuardarHorario.Text = "Guardar horario";
+            this.btnGuardarHorario.UseVisualStyleBackColor = true;
             // 
-            // txtCorreo
+            // txtDuracion
             // 
-            this.txtCorreo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(697, 295);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(300, 26);
-            this.txtCorreo.TabIndex = 13;
+            this.txtDuracion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDuracion.Location = new System.Drawing.Point(162, 381);
+            this.txtDuracion.Name = "txtDuracion";
+            this.txtDuracion.Size = new System.Drawing.Size(156, 26);
+            this.txtDuracion.TabIndex = 12;
             // 
-            // txtSegundoApellido
+            // txtNombreCurso
             // 
-            this.txtSegundoApellido.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoApellido.Location = new System.Drawing.Point(180, 381);
-            this.txtSegundoApellido.Name = "txtSegundoApellido";
-            this.txtSegundoApellido.Size = new System.Drawing.Size(300, 26);
-            this.txtSegundoApellido.TabIndex = 12;
+            this.txtNombreCurso.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCurso.Location = new System.Drawing.Point(162, 216);
+            this.txtNombreCurso.Name = "txtNombreCurso";
+            this.txtNombreCurso.Size = new System.Drawing.Size(300, 26);
+            this.txtNombreCurso.TabIndex = 10;
             // 
-            // txtPrimerApellido
+            // txtIDCurso
             // 
-            this.txtPrimerApellido.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrimerApellido.Location = new System.Drawing.Point(180, 295);
-            this.txtPrimerApellido.Name = "txtPrimerApellido";
-            this.txtPrimerApellido.Size = new System.Drawing.Size(300, 26);
-            this.txtPrimerApellido.TabIndex = 11;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(180, 216);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(300, 26);
-            this.txtNombre.TabIndex = 10;
-            // 
-            // txtIDInstitucional
-            // 
-            this.txtIDInstitucional.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDInstitucional.Location = new System.Drawing.Point(180, 59);
-            this.txtIDInstitucional.Name = "txtIDInstitucional";
-            this.txtIDInstitucional.Size = new System.Drawing.Size(150, 26);
-            this.txtIDInstitucional.TabIndex = 9;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(554, 384);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 18);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Teléfono";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(554, 298);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(137, 18);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Correo electrónico";
+            this.txtIDCurso.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDCurso.Location = new System.Drawing.Point(162, 59);
+            this.txtIDCurso.Name = "txtIDCurso";
+            this.txtIDCurso.Size = new System.Drawing.Size(150, 26);
+            this.txtIDCurso.TabIndex = 9;
             // 
             // label7
             // 
@@ -296,19 +252,9 @@
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(25, 384);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 18);
+            this.label7.Size = new System.Drawing.Size(71, 18);
             this.label7.TabIndex = 5;
-            this.label7.Text = "Segundo apellido";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 298);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 18);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Primer apellido";
+            this.label7.Text = "Duración";
             // 
             // label5
             // 
@@ -316,19 +262,9 @@
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(25, 219);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 18);
+            this.label5.Size = new System.Drawing.Size(131, 18);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Nombre";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 138);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 18);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Cédula de identidad";
+            this.label5.Text = "Nombre del curso";
             // 
             // label3
             // 
@@ -344,9 +280,9 @@
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(25, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 18);
+            this.label2.Size = new System.Drawing.Size(69, 18);
             this.label2.TabIndex = 0;
-            this.label2.Text = "ID Institucional";
+            this.label2.Text = "ID Curso";
             // 
             // label1
             // 
@@ -358,26 +294,71 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Modulo de Capacitaciones";
             // 
-            // panel2
+            // label4
             // 
-            this.panel2.BackgroundImage = global::Presentacion.Properties.Resources._339_3396821_png_file_svg_download_icon_logout_transparent_png;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(1342, 20);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(30, 32);
-            this.panel2.TabIndex = 4;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(324, 389);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 18);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Meses";
             // 
-            // panel3
+            // label6
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel3.BackgroundImage = global::Presentacion.Properties.Resources.RedLine_logo;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(152, 72);
-            this.panel3.TabIndex = 1;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(602, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(222, 18);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Día en que se dará una lección";
             // 
-            // FrmGestionColaborador
+            // txtDia
+            // 
+            this.txtDia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDia.Location = new System.Drawing.Point(844, 59);
+            this.txtDia.Name = "txtDia";
+            this.txtDia.Size = new System.Drawing.Size(117, 26);
+            this.txtDia.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(602, 219);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(196, 18);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Hora de inicio de la lección";
+            // 
+            // txtHoraInicio
+            // 
+            this.txtHoraInicio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraInicio.Location = new System.Drawing.Point(844, 216);
+            this.txtHoraInicio.Name = "txtHoraInicio";
+            this.txtHoraInicio.Size = new System.Drawing.Size(117, 26);
+            this.txtHoraInicio.TabIndex = 25;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(602, 384);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(236, 18);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Hora de finalización de la lección";
+            // 
+            // txtHoraFin
+            // 
+            this.txtHoraFin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraFin.Location = new System.Drawing.Point(844, 381);
+            this.txtHoraFin.Name = "txtHoraFin";
+            this.txtHoraFin.Size = new System.Drawing.Size(117, 26);
+            this.txtHoraFin.TabIndex = 27;
+            // 
+            // FrmGestionCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -390,10 +371,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmGestionColaborador";
+            this.Name = "FrmGestionCursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestión colaboradores";
-            this.Load += new System.EventHandler(this.FrmGestionColaborador_Load);
+            this.Text = "Gestión de cursos";
+            this.Load += new System.EventHandler(this.FrmGestionCursos_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.PanelCapacitaciones.ResumeLayout(false);
@@ -413,26 +394,25 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Panel PanelCapacitaciones;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.MaskedTextBox txtCedula;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.TextBox txtSegundoApellido;
-        private System.Windows.Forms.TextBox txtPrimerApellido;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtIDInstitucional;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnGuardarHorario;
+        private System.Windows.Forms.TextBox txtDuracion;
+        private System.Windows.Forms.TextBox txtNombreCurso;
+        private System.Windows.Forms.TextBox txtIDCurso;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox txtTelefono;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtDia;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtHoraFin;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtHoraInicio;
+        private System.Windows.Forms.Label label8;
     }
 }

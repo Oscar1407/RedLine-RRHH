@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Aspirante.cs" />
     <Compile Include="Colaborador.cs" />
+    <Compile Include="Curso.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
