@@ -25,6 +25,8 @@ namespace Presentacion
 
         private FrmAdministradorCapacitaciones capacitaciones;
 
+        private FrmContratacionesDespidos contrataciones;
+
         private Conexion conexion;
 
         private Usuario user;
@@ -47,6 +49,7 @@ namespace Presentacion
         private void button1_Click(object sender, EventArgs e)
         {
             this.capacitaciones = new FrmAdministradorCapacitaciones();
+            this.contrataciones = new FrmContratacionesDespidos();
             this.conexion = new Conexion();
             this.user = new Usuario();
 
@@ -87,7 +90,7 @@ namespace Presentacion
                 }
             //fin validacion combo box
 
-            //metodo de autenticacion
+            //metodo de autenticacion Capacitaciones
             if (this.conexion.autenticacion(this.user))
             {
                 if (this.user.rol.Equals("Administrador Capacitaciones"))
@@ -103,7 +106,29 @@ namespace Presentacion
             {
                 MessageBox.Show("Usuario o contraseña incorrecta", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+
+            //metodo de autenticacion Contrataciones
+            if (this.conexion.autenticacion(this.user))
+            {
+                if (this.user.rol.Equals("Administrador Contrataciones"))
+                {
+                    this.autenticado = true;
+                    this.contrataciones.Show();
+                    this.Dispose();
+                }
+                //agregar demás módulos para esta parte
+
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrecta", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
         }
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {
