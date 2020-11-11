@@ -476,6 +476,7 @@ namespace AccesoDatos
             }
         }
 
+        //elimina el correo del colaborador
         public void eliminarColaboradorCorreo(string ID)
         {
             try
