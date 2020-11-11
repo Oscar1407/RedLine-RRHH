@@ -199,6 +199,7 @@ namespace Presentacion
                         this.txtSegundoApellido.Text = colaborador.segundoApellido;
                         this.txtCorreo.Text = colaborador.correo;
                         this.txtTelefono.Text = colaborador.telefono;
+                        this.btnGuardar.Enabled = true;
 
                         MessageBox.Show("Se encontró un empleado con el ID Institucional indicado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

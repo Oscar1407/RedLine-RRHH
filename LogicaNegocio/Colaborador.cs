@@ -25,5 +25,6 @@ namespace LogicaNegocio
         public string telefono { set; get; }
 
         public string telefonoSecundario { set; get; }
+
     }
 }
