@@ -24,7 +24,7 @@ namespace Presentacion
 
         FrmAdministradorCapacitaciones administradorCapacitaciones;
 
-        Conexion conexion = null;
+        ConexionCapacitaciones conexion = null;
 
         Curso curso;
 
@@ -37,7 +37,7 @@ namespace Presentacion
         {
             try
             {
-                this.conexion = new Conexion();
+                this.conexion = new ConexionCapacitaciones();
             }
             catch (Exception ex)
             {

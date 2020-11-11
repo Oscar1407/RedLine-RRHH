@@ -26,7 +26,7 @@ namespace Presentacion
 
         Colaborador colaborador;
 
-        Conexion conexion = null;
+        ConexionCapacitaciones conexion = null;
 
         public FrmGestionColaborador()
         {
@@ -190,7 +190,7 @@ namespace Presentacion
         {
             try
             {
-                this.conexion = new Conexion();
+                this.conexion = new ConexionCapacitaciones();
                 this.deshabilitar();
             }
             catch (Exception ex)

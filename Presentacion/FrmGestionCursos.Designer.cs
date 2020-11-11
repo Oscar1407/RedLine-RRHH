@@ -37,6 +37,13 @@
             this.btnRegresar = new System.Windows.Forms.Button();
             this.PanelCapacitaciones = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtHoraFin = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtHoraInicio = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDia = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -49,13 +56,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtDia = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtHoraInicio = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtHoraFin = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.PanelCapacitaciones.SuspendLayout();
@@ -174,6 +174,70 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Gestionar la información de un curso";
             // 
+            // txtHoraFin
+            // 
+            this.txtHoraFin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraFin.Location = new System.Drawing.Point(844, 381);
+            this.txtHoraFin.Name = "txtHoraFin";
+            this.txtHoraFin.Size = new System.Drawing.Size(117, 26);
+            this.txtHoraFin.TabIndex = 27;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(602, 384);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(236, 18);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Hora de finalización de la lección";
+            // 
+            // txtHoraInicio
+            // 
+            this.txtHoraInicio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraInicio.Location = new System.Drawing.Point(844, 216);
+            this.txtHoraInicio.Name = "txtHoraInicio";
+            this.txtHoraInicio.Size = new System.Drawing.Size(117, 26);
+            this.txtHoraInicio.TabIndex = 25;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(602, 219);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(196, 18);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Hora de inicio de la lección";
+            // 
+            // txtDia
+            // 
+            this.txtDia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDia.Location = new System.Drawing.Point(844, 59);
+            this.txtDia.Name = "txtDia";
+            this.txtDia.Size = new System.Drawing.Size(117, 26);
+            this.txtDia.TabIndex = 23;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(602, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(222, 18);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Día en que se dará una lección";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(324, 389);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 18);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Meses";
+            // 
             // btnEliminar
             // 
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -185,6 +249,7 @@
             this.btnEliminar.TabIndex = 20;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnBuscar
             // 
@@ -197,6 +262,7 @@
             this.btnBuscar.TabIndex = 17;
             this.btnBuscar.Text = "Buscar curso";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnCancelar
             // 
@@ -209,6 +275,7 @@
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardarHorario
             // 
@@ -221,12 +288,14 @@
             this.btnGuardarHorario.TabIndex = 15;
             this.btnGuardarHorario.Text = "Guardar horario";
             this.btnGuardarHorario.UseVisualStyleBackColor = true;
+            this.btnGuardarHorario.Click += new System.EventHandler(this.btnGuardarHorario_Click);
             // 
             // txtDuracion
             // 
             this.txtDuracion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDuracion.Location = new System.Drawing.Point(162, 381);
             this.txtDuracion.Name = "txtDuracion";
+            this.txtDuracion.ReadOnly = true;
             this.txtDuracion.Size = new System.Drawing.Size(156, 26);
             this.txtDuracion.TabIndex = 12;
             // 
@@ -235,6 +304,7 @@
             this.txtNombreCurso.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreCurso.Location = new System.Drawing.Point(162, 216);
             this.txtNombreCurso.Name = "txtNombreCurso";
+            this.txtNombreCurso.ReadOnly = true;
             this.txtNombreCurso.Size = new System.Drawing.Size(300, 26);
             this.txtNombreCurso.TabIndex = 10;
             // 
@@ -293,70 +363,6 @@
             this.label1.Size = new System.Drawing.Size(425, 40);
             this.label1.TabIndex = 1;
             this.label1.Text = "Modulo de Capacitaciones";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(324, 389);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 18);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Meses";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(602, 62);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(222, 18);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Día en que se dará una lección";
-            // 
-            // txtDia
-            // 
-            this.txtDia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDia.Location = new System.Drawing.Point(844, 59);
-            this.txtDia.Name = "txtDia";
-            this.txtDia.Size = new System.Drawing.Size(117, 26);
-            this.txtDia.TabIndex = 23;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(602, 219);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(196, 18);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Hora de inicio de la lección";
-            // 
-            // txtHoraInicio
-            // 
-            this.txtHoraInicio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoraInicio.Location = new System.Drawing.Point(844, 216);
-            this.txtHoraInicio.Name = "txtHoraInicio";
-            this.txtHoraInicio.Size = new System.Drawing.Size(117, 26);
-            this.txtHoraInicio.TabIndex = 25;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(602, 384);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(236, 18);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Hora de finalización de la lección";
-            // 
-            // txtHoraFin
-            // 
-            this.txtHoraFin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoraFin.Location = new System.Drawing.Point(844, 381);
-            this.txtHoraFin.Name = "txtHoraFin";
-            this.txtHoraFin.Size = new System.Drawing.Size(117, 26);
-            this.txtHoraFin.TabIndex = 27;
             // 
             // FrmGestionCursos
             // 

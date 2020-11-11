@@ -34,6 +34,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnGestionCursos = new System.Windows.Forms.Button();
             this.btnConsultaMatricula = new System.Windows.Forms.Button();
             this.btnListaMatricula = new System.Windows.Forms.Button();
             this.btnHacerMatricula = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.btnAgregarColaborador = new System.Windows.Forms.Button();
             this.PanelCapacitaciones = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.PanelCapacitaciones.SuspendLayout();
@@ -97,7 +97,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DarkGreen;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnGestionCursos);
             this.groupBox1.Controls.Add(this.btnConsultaMatricula);
             this.groupBox1.Controls.Add(this.btnListaMatricula);
             this.groupBox1.Controls.Add(this.btnHacerMatricula);
@@ -115,6 +115,18 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acciones";
+            // 
+            // btnGestionCursos
+            // 
+            this.btnGestionCursos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionCursos.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnGestionCursos.Location = new System.Drawing.Point(3, 452);
+            this.btnGestionCursos.Name = "btnGestionCursos";
+            this.btnGestionCursos.Size = new System.Drawing.Size(262, 35);
+            this.btnGestionCursos.TabIndex = 8;
+            this.btnGestionCursos.Text = "Administrar los cursos";
+            this.btnGestionCursos.UseVisualStyleBackColor = true;
+            this.btnGestionCursos.Click += new System.EventHandler(this.btnGestionCursos_Click);
             // 
             // btnConsultaMatricula
             // 
@@ -233,17 +245,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Modulo de Capacitaciones";
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(3, 452);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(262, 35);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Administrar horarios de los cursos";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // FrmAdministradorCapacitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +288,6 @@
         private System.Windows.Forms.Button btnHacerMatricula;
         private System.Windows.Forms.Button btnListaMatricula;
         private System.Windows.Forms.Button btnConsultaMatricula;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGestionCursos;
     }
 }

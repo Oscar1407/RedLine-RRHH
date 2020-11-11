@@ -264,4 +264,44 @@ from [Curso]
 where IDCurso = @IDCurso
 go
 
+--procedimiento para listar los horarios
+create procedure [PA_Cns_Horario](@IDCurso varchar(25))
+as
+select IDCurso as Identificador,
+dia as Día,
+horaInicio as Hora_inicio,
+horaFin as Hora_fin
+from [HorarioCurso]
+where IDCurso = @IDCurso
+go
+
+--procedimientos para eliminar un curso
+create procedure [PA_Eli_Curso](@IDCurso varchar(25))
+as
+delete from [Curso] where IDCurso = @IDCurso
+go
+
+create procedure [PA_Eli_CursoHorario](@IDCurso varchar(25))
+as
+delete from [HorarioCurso] where IDCurso = @IDCurso
+go
+
+--procedimiento para almacenar los horarios de un curso
+create procedure [PA_Ins_Horario]
+(
+@IDCurso varchar(25),
+@dia varchar(15),
+@horaInicio int,
+@horaFin int
+)
+as
+insert into [HorarioCurso](IDCurso, dia, horaInicio, horaFin)
+values(@IDCurso, @dia, @horaInicio, @horaFin)
+go
+
+select * from [HorarioCurso]
+go
+
+delete from [HorarioCurso]
+go
 

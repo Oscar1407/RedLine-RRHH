@@ -36,8 +36,8 @@
             this.btnRegresar = new System.Windows.Forms.Button();
             this.PanelCapacitaciones = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dtgListaColaboradores = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.PanelCapacitaciones.SuspendLayout();
@@ -140,16 +140,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de colaboradores en capacitaciones";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(425, 40);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Modulo de Capacitaciones";
-            // 
             // dtgListaColaboradores
             // 
             this.dtgListaColaboradores.AllowUserToAddRows = false;
@@ -162,6 +152,16 @@
             this.dtgListaColaboradores.ReadOnly = true;
             this.dtgListaColaboradores.Size = new System.Drawing.Size(1168, 592);
             this.dtgListaColaboradores.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(425, 40);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Modulo de Capacitaciones";
             // 
             // FrmListaColaboradores
             // 

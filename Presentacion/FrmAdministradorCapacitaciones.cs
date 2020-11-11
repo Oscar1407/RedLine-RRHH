@@ -29,6 +29,8 @@ namespace Presentacion
 
         FrmListaMatricula frameListaMatricula;
 
+        FrmGestionCursos frameGestCursos;
+
         public FrmAdministradorCapacitaciones()
         {
             InitializeComponent();
@@ -156,6 +158,21 @@ namespace Presentacion
             {
                 this.frameGestMatricula = new FrmGestionMatricula();
                 this.frameGestMatricula.Show();
+                this.Close();
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnGestionCursos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.frameGestCursos = new FrmGestionCursos();
+                this.frameGestCursos.Show();
                 this.Close();
                 this.Dispose();
             }

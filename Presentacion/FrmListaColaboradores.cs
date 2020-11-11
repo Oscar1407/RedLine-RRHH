@@ -15,7 +15,7 @@ namespace Presentacion
     {
         FrmAdministradorCapacitaciones administradorCapacitaciones;
 
-        Conexion conexion = null;
+        ConexionCapacitaciones conexion = null;
 
         public FrmListaColaboradores()
         {
@@ -40,7 +40,7 @@ namespace Presentacion
         {
             try
             {
-                this.conexion = new Conexion();
+                this.conexion = new ConexionCapacitaciones();
                 this.consultarLista();
             }
             catch (Exception ex)
@@ -57,7 +57,6 @@ namespace Presentacion
                 this.dtgListaColaboradores.DataSource = this.conexion.consultaListaEmpleados().Tables[0];
                 this.dtgListaColaboradores.AutoResizeColumns();
                 this.dtgListaColaboradores.ReadOnly = true;
-                this.dtgListaColaboradores.ClearSelection();
             }
             catch (Exception ex)
             {
