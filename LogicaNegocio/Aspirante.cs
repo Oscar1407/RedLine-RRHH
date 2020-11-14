@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LogicaNegocio
 {
-    class Aspirante
+    public class Aspirante
     {
         public string idAspirante { set; get; }
 

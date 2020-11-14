@@ -83,6 +83,12 @@
     <Compile Include="FrmGestionCursos.Designer.cs">
       <DependentUpon>FrmGestionCursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGestionDespidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionDespidos.Designer.cs">
+      <DependentUpon>FrmGestionDespidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionMatricula.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     <EmbeddedResource Include="FrmGestionCursos.resx">
       <DependentUpon>FrmGestionCursos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionDespidos.resx">
+      <DependentUpon>FrmGestionDespidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionMatricula.resx">
       <DependentUpon>FrmGestionMatricula.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,16 +215,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
-      <Project>{e69e2655-39aa-4678-9e3f-0e99f4f2febb}</Project>
-      <Name>AccesoDatos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LogicaNegocio\LogicaNegocio.csproj">
-      <Project>{1c82a446-4567-46d5-b134-7644305e977d}</Project>
-      <Name>LogicaNegocio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="img\RedLine-logo.PNG" />
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +230,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\16 %28Search%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
+      <Project>{e69e2655-39aa-4678-9e3f-0e99f4f2febb}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicaNegocio\LogicaNegocio.csproj">
+      <Project>{1c82a446-4567-46d5-b134-7644305e977d}</Project>
+      <Name>LogicaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
