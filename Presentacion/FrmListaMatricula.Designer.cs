@@ -38,9 +38,14 @@
             this.PanelCapacitaciones = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtIDCurso = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtgMatricula = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.PanelCapacitaciones.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMatricula)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -128,8 +133,11 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox2.Controls.Add(this.dtgMatricula);
+            this.groupBox2.Controls.Add(this.txtIDCurso);
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox2.Location = new System.Drawing.Point(22, 74);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1164, 695);
@@ -147,6 +155,35 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Modulo de Capacitaciones";
             // 
+            // txtIDCurso
+            // 
+            this.txtIDCurso.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDCurso.Location = new System.Drawing.Point(124, 81);
+            this.txtIDCurso.Name = "txtIDCurso";
+            this.txtIDCurso.Size = new System.Drawing.Size(150, 26);
+            this.txtIDCurso.TabIndex = 12;
+            this.txtIDCurso.TextChanged += new System.EventHandler(this.txtIDCurso_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(49, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 18);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "ID Curso";
+            // 
+            // dtgMatricula
+            // 
+            this.dtgMatricula.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dtgMatricula.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgMatricula.Location = new System.Drawing.Point(20, 222);
+            this.dtgMatricula.Name = "dtgMatricula";
+            this.dtgMatricula.Size = new System.Drawing.Size(1123, 269);
+            this.dtgMatricula.TabIndex = 13;
+            // 
             // FrmListaMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,10 +200,14 @@
             this.Name = "FrmListaMatricula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de matriculas";
+            this.Load += new System.EventHandler(this.FrmListaMatricula_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.PanelCapacitaciones.ResumeLayout(false);
             this.PanelCapacitaciones.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMatricula)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -182,5 +223,8 @@
         private System.Windows.Forms.Panel PanelCapacitaciones;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtIDCurso;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dtgMatricula;
     }
 }

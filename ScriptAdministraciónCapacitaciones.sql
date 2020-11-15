@@ -7,7 +7,8 @@ IDInstitucional varchar(25) not null primary key,
 cedula varchar(25) not null,
 nombre varchar(25) not null,
 primerApellido varchar(25) not null,
-segundoApellido varchar(25) not null
+segundoApellido varchar(25) not null,
+constraint fk_colaborador foreign key (IDInstitucional) references [Nomina] (IDInstitucional)
 )
 go
 
@@ -88,16 +89,27 @@ go
 --tabla de la matricula
 create table [Matricula]
 (
-IDMatricula varchar(25) not null primary key,
+IDMatricula int identity(1,1) not null primary key,
 IDCurso varchar(25) not null,
 IDInstitucional varchar(25) not null,
-estado varchar(25) not null,
+estado varchar(25) not null default 'En curso',
 periodo varchar(25) not null
 constraint fk_curso foreign key (IDCurso) references [Curso] (IDCurso),
-constraint fk_colaborador foreign key (IDInstitucional) references [ColaboradorCapacitacion] (IDInstitucional)
+constraint fk_colaboradorCapacitaciones foreign key (IDInstitucional) references [ColaboradorCapacitacion] (IDInstitucional)
 )
 go
 
+drop table [Matricula]
+go
+
+delete from [Matricula]
+go
+
+insert into [Matricula] values('2', 'B77064', 'En curso', 'Primer')
+go
+
+select * from [Matricula]
+go
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 --procedimientos almacenados del modulo de capacitaciones
@@ -303,5 +315,40 @@ select * from [HorarioCurso]
 go
 
 delete from [HorarioCurso]
+go
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--procedimientos almacenados para las matriculas
+
+--procedimiento almacenado para agregar a la matricula
+create procedure [PA_Ins_Matricula]
+(
+@IDCurso varchar(25),
+@IDInstitucional varchar(25),
+@estado varchar(25),
+@periodo varchar(25)
+)
+as insert into [Matricula]
+values (@IDCurso, @IDInstitucional, @estado, @periodo)
+go
+
+create procedure [PA_Cns_Matricula](@IDCurso varchar(25))
+as
+select c.IDInstitucional as ID_Institucional,
+c.cedula as Cedula,
+c.nombre as Nombre,
+c.primerApellido as Primer_Apellido,
+c.segundoApellido as Segundo_Apellido,
+a.IDCurso as ID_Curso,
+a.nombreCurso as Nombre_Curso,
+m.estado as Estado
+from [Matricula] m with(nolock)
+inner join [ColaboradorCapacitacion] c with(nolock) on c.IDInstitucional = m.IDInstitucional
+inner join [Curso] a with(nolock) on a.IDCurso = m.IDCurso
+where m.IDCurso = @IDCurso
+go
+
+exec [PA_Cns_Matricula] @IDCurso = '2'
 go
 

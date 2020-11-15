@@ -64,35 +64,24 @@ namespace Presentacion
                 {
                     MessageBox.Show("Debe ingresar el ID del curso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                {
-                    this.curso.IDCurso = this.txtIDCurso.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtNombreCurso.Text))
+                else if (string.IsNullOrEmpty(this.txtNombreCurso.Text))
                 {
                     MessageBox.Show("Debe ingresar el nombre del curso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                {
-                    this.curso.nombreCurso = this.txtNombreCurso.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtDuracion.Text))
+                else if (string.IsNullOrEmpty(this.txtDuracion.Text))
                 {
                     MessageBox.Show("Debe ingresar la duración del curso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                {
-                    this.curso.duracion = this.txtDuracion.Text.Trim();
-                }
-
-                if (this.conexion.consultaExistenciaCurso(this.curso.IDCurso) == 1)
+                else if (this.conexion.consultaExistenciaCurso(this.txtIDCurso.Text) == 1)
                 {
                     MessageBox.Show("Ya existe un curso con ese identificador", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
+                    this.curso.IDCurso = this.txtIDCurso.Text.Trim();
+                    this.curso.nombreCurso = this.txtNombreCurso.Text.Trim();
+                    this.curso.duracion = this.txtDuracion.Text.Trim();
+
                     if (MessageBox.Show("¿Está seguro de que quiere agregar al colaborador? No podrá editar la información después", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         //control de transaccion
@@ -114,7 +103,7 @@ namespace Presentacion
             catch (TransactionAbortedException ex)
             {
                 throw ex;
-                //throw new TransactionAbortedException(String.Format("No se pudo completar la transacción"), ex);
+                throw new TransactionAbortedException(String.Format("No se pudo completar la transacción"), ex);
             }
             
         }

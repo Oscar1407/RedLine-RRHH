@@ -100,62 +100,38 @@ namespace Presentacion
                 {
                     MessageBox.Show("Debe ingresar el ID Institucional del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                {
-                    this.colaborador.IDInstitucional = this.txtIDInstitucional.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtCedula.Text))
+                else if (string.IsNullOrEmpty(this.txtCedula.Text))
                 {
                     MessageBox.Show("Debe ingresar la cédula del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    this.colaborador.cedula = this.txtCedula.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtNombre.Text))
+                }     
+                else if (string.IsNullOrEmpty(this.txtNombre.Text))
                 {
                     MessageBox.Show("Debe ingresar el nombre del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                {
-                    this.colaborador.nombre = this.txtNombre.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtPrimerApellido.Text))
+                else if (string.IsNullOrEmpty(this.txtPrimerApellido.Text))
                 {
                     MessageBox.Show("Debe ingresar el primer apellido del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                {
-                    this.colaborador.primerApellido = this.txtPrimerApellido.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtSegundoApellido.Text))
+                else if (string.IsNullOrEmpty(this.txtSegundoApellido.Text))
                 {
                     MessageBox.Show("Debe ingresar el segundo apellido del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                {
-                    this.colaborador.segundoApellido = this.txtSegundoApellido.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtCorreo.Text))
+                else if (string.IsNullOrEmpty(this.txtCorreo.Text))
                 {
                     MessageBox.Show("Debe ingresar el correo del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                {
-                    this.colaborador.correo = this.txtCorreo.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtTelefono.Text))
+                else if (string.IsNullOrEmpty(this.txtTelefono.Text))
                 {
                     MessageBox.Show("Debe ingresar el telefono del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                }               
                 else
                 {
+                    this.colaborador.IDInstitucional = this.txtIDInstitucional.Text.Trim();
+                    this.colaborador.cedula = this.txtCedula.Text.Trim();
+                    this.colaborador.nombre = this.txtNombre.Text.Trim();
+                    this.colaborador.primerApellido = this.txtPrimerApellido.Text.Trim();
+                    this.colaborador.segundoApellido = this.txtSegundoApellido.Text.Trim();
+                    this.colaborador.correo = this.txtCorreo.Text.Trim();
                     this.colaborador.telefono = this.txtTelefono.Text.Trim();
                 }
 
