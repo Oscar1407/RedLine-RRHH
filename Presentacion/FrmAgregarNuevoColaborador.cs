@@ -66,77 +66,21 @@ namespace Presentacion
             try
             {
                 colaborador = new Colaborador();
-
-                //evaluaciones de que los campos se encuentren en un estado válido para la base de datos
-                if (string.IsNullOrEmpty(this.txtIDInstitucional.Text))
+                
+                if (this.conexion.consultaExistencia(this.txtIDInstitucional.Text) == 1)
                 {
-                    MessageBox.Show("Debe ingresar el ID Institucional del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                    MessageBox.Show("Ya existe un colaborador con ese ID Institucional almacenado en capacitaciones", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }               
                 else
                 {
                     this.colaborador.IDInstitucional = this.txtIDInstitucional.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtCedula.Text))
-                {
-                    MessageBox.Show("Debe ingresar la cédula del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
                     this.colaborador.cedula = this.txtCedula.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtNombre.Text))
-                {
-                    MessageBox.Show("Debe ingresar el nombre del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
                     this.colaborador.nombre = this.txtNombre.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtPrimerApellido.Text))
-                {
-                    MessageBox.Show("Debe ingresar el primer apellido del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
                     this.colaborador.primerApellido = this.txtPrimerApellido.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtSegundoApellido.Text))
-                {
-                    MessageBox.Show("Debe ingresar el segundo apellido del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
                     this.colaborador.segundoApellido = this.txtSegundoApellido.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtCorreo.Text))
-                {
-                    MessageBox.Show("Debe ingresar el correo del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
                     this.colaborador.correo = this.txtCorreo.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtTelefono.Text))
-                {
-                    MessageBox.Show("Debe ingresar el telefono del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
                     this.colaborador.telefono = this.txtTelefono.Text.Trim();
-                }
 
-                if (this.conexion.consultaExistencia(this.colaborador.IDInstitucional) == 1)
-                {
-                    MessageBox.Show("Ya existe un colaborador con ese ID Institucional", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
                     if (MessageBox.Show("¿Está seguro de que quiere agregar al colaborador?", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         //control de transaccion
@@ -146,7 +90,7 @@ namespace Presentacion
                                 this.conexion.guardarCorreoColaborador(colaborador) == 1 &&
                                 this.conexion.guardarTelefonoColaborador(colaborador) == 1)
                             {
-                                MessageBox.Show("Empleado agregado", "Proceso Aplicado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Colaborador agregado", "Proceso Aplicado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 scope.Complete();
                             }
                             else
@@ -169,6 +113,7 @@ namespace Presentacion
             this.guardarColaborador();           
             this.limpiarCampos();
             this.deshabilitar();
+            this.txtIDInstitucional.Enabled = true;
         }
 
         //accion de cancelar
@@ -176,6 +121,7 @@ namespace Presentacion
         {
             this.limpiarCampos();
             this.deshabilitar();
+            this.txtIDInstitucional.Enabled = true;
         }
 
         //accion de verificar si el empleado que se agregará a capacitaciones ya existe en la BD
@@ -185,7 +131,7 @@ namespace Presentacion
             {
                 if (string.IsNullOrEmpty(this.txtIDInstitucional.Text))
                 {
-                    MessageBox.Show("Debe ingresar el ID Institucional del colaborador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe ingresar el ID Institucional del colaborador perteneciente a la nomina", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -200,8 +146,9 @@ namespace Presentacion
                         this.txtCorreo.Text = colaborador.correo;
                         this.txtTelefono.Text = colaborador.telefono;
                         this.btnGuardar.Enabled = true;
+                        this.txtIDInstitucional.Enabled = false;
 
-                        MessageBox.Show("Se encontró un empleado con el ID Institucional indicado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se encontró un colaborador con el ID Institucional indicado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -209,20 +156,7 @@ namespace Presentacion
             {
                 MessageBox.Show("No se encontró ningún colaborador con el ID Institucional indicado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 new Exception("No existe ningún colaborador con ese ID Institucional");
-                this.habilitar();
             }
-        }
-
-        //habilita los campos del formulario y los botones
-        private void habilitar()
-        {
-            this.txtCedula.Enabled = true;
-            this.txtNombre.Enabled = true;
-            this.txtPrimerApellido.Enabled = true;
-            this.txtSegundoApellido.Enabled = true;
-            this.txtCorreo.Enabled = true;
-            this.txtTelefono.Enabled = true;
-            this.btnGuardar.Enabled = true;
         }
 
         //deshabilita los campos del formulario y los botones

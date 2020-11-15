@@ -87,35 +87,23 @@ namespace Presentacion
                 {
                     MessageBox.Show("Debe ingresar un ID del curso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                {
-                    this.horario.IDCurso = this.txtIDCurso.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtDia.Text))
+                else if (string.IsNullOrEmpty(this.txtDia.Text))
                 {
                     MessageBox.Show("Debe ingresar un día de la semana para el horario", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                {
-                    this.horario.dia = this.txtDia.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(this.txtHoraInicio.Text))
+                else if (string.IsNullOrEmpty(this.txtHoraInicio.Text))
                 {
                     MessageBox.Show("Debe ingresar una hora de inicio para las sesiones", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                {
-                    this.horario.horaInicio = int.Parse(this.txtHoraInicio.Text.Trim());
-                }
-
-                if (string.IsNullOrEmpty(this.txtHoraFin.Text))
+                else if (string.IsNullOrEmpty(this.txtHoraFin.Text))
                 {
                     MessageBox.Show("Debe ingresar una hora de final para las sesiones", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
+                    this.horario.horaInicio = int.Parse(this.txtHoraInicio.Text.Trim());
+                    this.horario.IDCurso = this.txtIDCurso.Text.Trim();
+                    this.horario.dia = this.txtDia.Text.Trim();
                     this.horario.horaFin = int.Parse(this.txtHoraFin.Text.Trim());
                 }
 

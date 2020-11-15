@@ -796,5 +796,73 @@ namespace AccesoDatos
                 throw ex;
             }
         }
+
+        /*************************************************************************************************************************************************************************************************************************/
+
+        //metodo para agregar una nueva matricula
+        public int agregarMatricula(Matricula matricula)
+        {
+            try
+            {
+                if (matricula != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.cnx;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Ins_Matricula]";
+
+                    this.comando.Parameters.AddWithValue("@IDCurso", matricula.IDCurso);
+                    this.comando.Parameters.AddWithValue("@IDInstitucional", matricula.IDInstitucional);
+                    this.comando.Parameters.AddWithValue("@estado", matricula.estado);
+                    this.comando.Parameters.AddWithValue("@periodo", matricula.periodo);
+
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Error de transacción", ex);
+                return 0;
+            }
+        }
+
+        public DataSet consultaMatriculaLista(string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.cnx;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Cns_Matricula]";
+                this.comando.Parameters.AddWithValue("@IDCurso", ID);
+
+                this.adaptador = new SqlDataAdapter();
+                this.adaptador.SelectCommand = this.comando;
+                this.datos = new DataSet();
+                this.adaptador.Fill(this.datos);
+
+                this.cerrarConexion();
+                this.comando.Dispose();
+                this.adaptador.Dispose();
+
+                return this.datos;
+            }
+
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
