@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace AccesoDatos
         {
             try
             {
-                string StrConexion = @"Data Source=DESKTOP-M0HE3VI\MSSQLSERVERDEV;Initial Catalog=RedLine-DataBase;User ID=RedLine-UserAdmin;Password=Osc.pac1407";
+                string StrConexion = @"Data Source=FABIAN-PC\SQLEXPRESS;Initial Catalog=RedLine-DataBase;User ID=userRedLine;Password=ucr2020";
                 this.cnx = new SqlConnection(StrConexion);
                 this.cnx.Open();
             }

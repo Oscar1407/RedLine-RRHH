@@ -122,9 +122,9 @@
             this.pnlMenu.Controls.Add(this.btnCapacitaciones);
             this.pnlMenu.Controls.Add(this.btnGestion);
             this.pnlMenu.Controls.Add(this.btnNomina);
-            this.pnlMenu.Location = new System.Drawing.Point(1, 62);
+            this.pnlMenu.Location = new System.Drawing.Point(-9, 62);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(926, 57);
+            this.pnlMenu.Size = new System.Drawing.Size(936, 57);
             this.pnlMenu.TabIndex = 5;
             // 
             // btnLogout
@@ -132,7 +132,7 @@
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogout.BackColor = System.Drawing.Color.White;
             this.btnLogout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(839, 15);
+            this.btnLogout.Location = new System.Drawing.Point(849, 15);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(75, 30);
             this.btnLogout.TabIndex = 2;
@@ -188,7 +188,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(304, 136);
+            this.label11.Location = new System.Drawing.Point(310, 133);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(264, 27);
             this.label11.TabIndex = 45;
@@ -231,9 +231,9 @@
             this.pnlDespidos.Controls.Add(this.label3);
             this.pnlDespidos.Controls.Add(this.label2);
             this.pnlDespidos.Controls.Add(this.label1);
-            this.pnlDespidos.Location = new System.Drawing.Point(1, 172);
+            this.pnlDespidos.Location = new System.Drawing.Point(-6, 172);
             this.pnlDespidos.Name = "pnlDespidos";
-            this.pnlDespidos.Size = new System.Drawing.Size(932, 478);
+            this.pnlDespidos.Size = new System.Drawing.Size(933, 478);
             this.pnlDespidos.TabIndex = 47;
             // 
             // pictureBoxBuscarAsp
@@ -257,6 +257,7 @@
             this.btnCoonsultarDesp.TabIndex = 42;
             this.btnCoonsultarDesp.Text = "Consultar Despidos";
             this.btnCoonsultarDesp.UseVisualStyleBackColor = false;
+            this.btnCoonsultarDesp.Click += new System.EventHandler(this.btnCoonsultarDesp_Click);
             // 
             // btnAgregarDespido
             // 
@@ -268,6 +269,7 @@
             this.btnAgregarDespido.TabIndex = 41;
             this.btnAgregarDespido.Text = "Agregar Despido";
             this.btnAgregarDespido.UseVisualStyleBackColor = false;
+            this.btnAgregarDespido.Click += new System.EventHandler(this.btnAgregarDespido_Click);
             // 
             // txtMotivoDes
             // 
@@ -462,9 +464,9 @@
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pictureBoxInsta);
             this.panel2.Controls.Add(this.pictureBoxFace);
-            this.panel2.Location = new System.Drawing.Point(1, 636);
+            this.panel2.Location = new System.Drawing.Point(-9, 636);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(932, 90);
+            this.panel2.Size = new System.Drawing.Size(942, 90);
             this.panel2.TabIndex = 48;
             // 
             // label9

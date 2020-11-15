@@ -63,5 +63,10 @@ namespace Presentacion
                 throw ex;
             }
         }
+
+        private void dtgListaColaboradores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

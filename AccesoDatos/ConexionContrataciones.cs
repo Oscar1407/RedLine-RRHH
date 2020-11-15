@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Data;
 
 using LogicaNegocio;
+using System.Security.Cryptography;
 
 namespace AccesoDatos
 {
@@ -57,6 +58,45 @@ namespace AccesoDatos
                 throw ex;
             }
         }
+
+        public int consultaExistencia(string identificador)
+        {
+            try
+            {
+                int existe = 0;
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.conexionA;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Cns_ExistenciaDespido]";
+                this.comando.Parameters.AddWithValue("@idColaborador", identificador);
+                this.lector = this.comando.ExecuteReader();
+
+                if (this.lector.Read())
+                {
+                    if (this.lector.GetValue(0).ToString().Equals("1"))
+                    {
+                        existe = 1;
+                    }
+                    else
+                    {
+                        existe = 0;
+                    }
+                }
+
+                this.cerrarConexion();
+                this.comando.Dispose();
+                this.lector = null;
+
+                return existe;
+            }
+            catch (Exception ex)
+            {
+                new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;
+            }
+        }
+
 
         //metodo de consultar existencia del aspirante
         public int consultaExistenciaAspirante(string identificador)
@@ -145,7 +185,7 @@ namespace AccesoDatos
         }
 
 
-        //métodos de agregar un nuevo aspirante
+        //métodos para agregar un nuevo aspirante
         public int guardarAspirante(Aspirante aspirante)
         {
             try
@@ -295,6 +335,298 @@ namespace AccesoDatos
                 throw ex;
             }
         }
+
+        //métodos de agregar colaborador despedido a la tabla de despidos
+        public int guardarDespido(Despido despido)
+        {
+            try
+            {
+                if (despido != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.conexionA;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Ins_Despido]";
+
+                    this.comando.Parameters.AddWithValue("@idColaborador", despido.IDInstitucional);
+                    this.comando.Parameters.AddWithValue("@cedula", despido.cedula);
+                    this.comando.Parameters.AddWithValue("@nombre", despido.nombre);
+                    this.comando.Parameters.AddWithValue("@primerApellido", despido.primerApellido);
+                    this.comando.Parameters.AddWithValue("@segundoApellido", despido.segundoApellido);
+                    this.comando.Parameters.AddWithValue("@puesto", despido.puestoTrabajo);
+                    this.comando.Parameters.AddWithValue("@motivo", despido.motivoDespido);
+
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;
+            }
+        }
+
+        public int guardarCorreoDespido(Despido despido)
+        {
+            try
+            {
+                if (despido != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.conexionA;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Ins_CorreoDespido]";
+
+                    this.comando.Parameters.AddWithValue("@idColaborador", despido.IDInstitucional);
+                    this.comando.Parameters.AddWithValue("@correo", despido.correo);
+
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;
+            }
+        }
+
+        public int guardarTelefonoDespido(Despido despido)
+        {
+            try
+            {
+                if (despido != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.conexionA;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Ins_TelefonoDespido]";
+
+                    this.comando.Parameters.AddWithValue("@idColaborador", despido.IDInstitucional);
+                    this.comando.Parameters.AddWithValue("@telefono", despido.telefono);
+
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Debe ingresar un valor en el ID Institucional");
+                return 0;
+            }
+        }
+
+        //metodos para eliminar al colaborador de la nómina
+        public void eliminarColaboradorNomina(string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.conexionA;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Eli_ColaboradorNomina]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", ID);
+
+                this.comando.ExecuteNonQuery();
+                this.cerrarConexion();
+                this.comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        //elimina el correo del colaborador
+        public void eliminarColaboradorCorreoNomina(string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.conexionA;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Eli_ColaboradorCorreoNomina]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", ID);
+
+                this.comando.ExecuteNonQuery();
+                this.cerrarConexion();
+                this.comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void eliminarColaboradorTelefonoNomina(string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.conexionA;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Eli_ColaboradorTelefonoNomina]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", ID);
+
+                this.comando.ExecuteNonQuery();
+                this.cerrarConexion();
+                this.comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void eliminarColaboradorHorarioNomina(string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.conexionA;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Eli_ColaboradorHorarioNomina]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", ID);
+
+                this.comando.ExecuteNonQuery();
+                this.cerrarConexion();
+                this.comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void eliminarColaboradorDeduccionLaboralNomina(string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.conexionA;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Eli_ColaboradorDeduccionLaboralNomina]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", ID);
+
+                this.comando.ExecuteNonQuery();
+                this.cerrarConexion();
+                this.comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void eliminarColaboradorAguinaldoNomina(string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.conexionA;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Eli_ColaboradorAguinaldolNomina]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", ID);
+
+                this.comando.ExecuteNonQuery();
+                this.cerrarConexion();
+                this.comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void eliminarColaboradorDeduccionAguinaldoNomina(string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.conexionA;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Eli_ColaboradorDecuccionAguinaldoNomina]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", ID);
+
+                this.comando.ExecuteNonQuery();
+                this.cerrarConexion();
+                this.comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
+        //metodo que trae el dataset para llenar la tabla
+        public DataSet consultaListaAspirantes(string puesto)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.conexionA;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Cns_ListaAspirantes]";
+                this.comando.Parameters.AddWithValue("@puestoTrabajo", puesto);
+
+                this.adaptador = new SqlDataAdapter();
+                this.adaptador.SelectCommand = this.comando;
+                this.datos = new DataSet();
+                this.adaptador.Fill(this.datos);
+
+                this.cerrarConexion();
+                this.comando.Dispose();
+                this.adaptador.Dispose();
+
+                return this.datos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
 
     }// Fin de la clase

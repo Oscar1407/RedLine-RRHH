@@ -26,6 +26,8 @@ namespace Presentacion
 
         FrmGestionDespidos frmDespidos;
 
+        FrmListaAspirantes listaAspirantes;
+
         Aspirante aspirante;
 
         ConexionContrataciones conexionA = null;
@@ -200,6 +202,7 @@ namespace Presentacion
                             this.txtDesc.Text = aspirante.descripcion;
 
                             MessageBox.Show("Se encontró un aspirante con el ID indicado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                             this.deshabilitar();
                         }
                     }
                 }
@@ -248,7 +251,10 @@ namespace Presentacion
         //Método para mostrar el frame con la lista de los aspirantes agregados
         private void btnCoonsultarAsp_Click(object sender, EventArgs e)
         {
-
+            this.listaAspirantes = new FrmListaAspirantes();
+            this.listaAspirantes.Show();
+            this.Close();
+            this.Dispose();
         }
 
         private void btnConsultarDespidos_Click(object sender, EventArgs e)

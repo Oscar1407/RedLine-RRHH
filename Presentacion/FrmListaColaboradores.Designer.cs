@@ -152,6 +152,7 @@
             this.dtgListaColaboradores.ReadOnly = true;
             this.dtgListaColaboradores.Size = new System.Drawing.Size(1168, 592);
             this.dtgListaColaboradores.TabIndex = 0;
+            this.dtgListaColaboradores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgListaColaboradores_CellContentClick);
             // 
             // label1
             // 

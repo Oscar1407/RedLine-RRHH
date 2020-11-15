@@ -40,6 +40,7 @@
             this.btnNomina = new System.Windows.Forms.Button();
             this.lblSubT = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtDesc = new System.Windows.Forms.RichTextBox();
             this.pictureBoxBuscarAsp = new System.Windows.Forms.PictureBox();
             this.cboxPuestoAs = new System.Windows.Forms.ComboBox();
@@ -68,7 +69,6 @@
             this.pictureBoxInsta = new System.Windows.Forms.PictureBox();
             this.pictureBoxFace = new System.Windows.Forms.PictureBox();
             this.toolTipMensajes = new System.Windows.Forms.ToolTip(this.components);
-            this.label11 = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMenu.SuspendLayout();
@@ -227,6 +227,16 @@
             this.panel1.Size = new System.Drawing.Size(801, 494);
             this.panel1.TabIndex = 3;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(-5, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(157, 27);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Contrataciones";
+            // 
             // txtDesc
             // 
             this.txtDesc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -253,7 +263,7 @@
             this.cboxPuestoAs.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxPuestoAs.FormattingEnabled = true;
             this.cboxPuestoAs.Items.AddRange(new object[] {
-            "Administrados de bases de datos",
+            "Administrador de bases de datos",
             "Desarrollador Junior",
             "Analista de sistemas",
             "Scrum Master",
@@ -513,16 +523,6 @@
             this.pictureBoxFace.TabIndex = 0;
             this.pictureBoxFace.TabStop = false;
             this.pictureBoxFace.Click += new System.EventHandler(this.pictureBoxFace_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(-5, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(157, 27);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Contrataciones";
             // 
             // FrmContratacionesDespidos
             // 
