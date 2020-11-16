@@ -333,6 +333,7 @@ as insert into [Matricula]
 values (@IDCurso, @IDInstitucional, @estado, @periodo)
 go
 
+--procedimiento almacenado para consultar por ID Curso
 create procedure [PA_Cns_Matricula](@IDCurso varchar(25))
 as
 select c.IDInstitucional as ID_Institucional,
@@ -350,5 +351,38 @@ where m.IDCurso = @IDCurso
 go
 
 exec [PA_Cns_Matricula] @IDCurso = '2'
+go
+
+--procedimiento almacenado para consultar el estado de la matrícula
+create procedure [PA_Cns_MatriculaEstado](@IDInstitucional varchar(25))
+as
+select c.IDInstitucional,
+c.cedula,
+c.nombre,
+c.primerApellido,
+c.segundoApellido,
+e.correo,
+t.telefono,
+a.IDCurso,
+a.nombreCurso,
+a.duracion,
+m.periodo,
+m.estado
+from [Matricula] m with(nolock)
+inner join [ColaboradorCapacitacion] c with(nolock) on c.IDInstitucional = m.IDInstitucional
+inner join [CorreoColaboradorCapacitaciones] e with(nolock) on e.IDInstitucional = m.IDInstitucional
+inner join [TelefonoColaboradorCapacitaciones] t with(nolock) on t.IDInstitucional = m.IDInstitucional
+inner join [Curso] a with(nolock) on a.IDCurso = m.IDCurso
+where c.IDInstitucional = @IDInstitucional
+go
+
+exec [PA_Cns_MatriculaEstado] @IDInstitucional = 'B77064'
+go
+
+create procedure [PA_Act_EstadoMatricula](@IDCurso varchar(25), @IDInstitucional varchar(25), @estado varchar(25))
+as
+update [Matricula] set
+estado = @estado
+where IDCurso = @IDCurso and IDInstitucional = @IDInstitucional
 go
 

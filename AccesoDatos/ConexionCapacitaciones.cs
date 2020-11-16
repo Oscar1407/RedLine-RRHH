@@ -29,7 +29,7 @@ namespace AccesoDatos
         {
             try
             {
-                string StrConexion = @"Data Source=FABIAN-PC\SQLEXPRESS;Initial Catalog=RedLine-DataBase;User ID=userRedLine;Password=ucr2020";
+                string StrConexion = @"Data Source=DESKTOP-M0HE3VI\MSSQLSERVERDEV;Initial Catalog=RedLine-DataBase;User ID=RedLine-UserAdmin;Password=Osc.pac1407";
                 this.cnx = new SqlConnection(StrConexion);
                 this.cnx.Open();
             }
@@ -836,6 +836,7 @@ namespace AccesoDatos
             }
         }
 
+        //metodo para consultar la lista de matricula por medio del ID del curso
         public DataSet consultaMatriculaLista(string ID)
         {
             try
@@ -863,6 +864,90 @@ namespace AccesoDatos
             {
 
                 throw ex;
+            }
+        }
+
+        //metodo para consultar un colaborador para la matricula y finalizar la capacitacion
+        public Matricula consultaMatricula (string ID)
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.cnx;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[PA_Cns_MatriculaEstado]";
+                this.comando.Parameters.AddWithValue("@IDInstitucional", ID);
+                this.lector = this.comando.ExecuteReader();
+
+                Matricula matricula = null;
+                if (this.lector.Read())
+                {
+                    matricula = new Matricula();
+
+                    matricula.IDInstitucional = ID;
+                    matricula.cedula = this.lector.GetValue(1).ToString();
+                    matricula.nombre = this.lector.GetValue(2).ToString();
+                    matricula.primerApellido = this.lector.GetValue(3).ToString();
+                    matricula.segundoApellido = this.lector.GetValue(4).ToString();
+                    matricula.correo = this.lector.GetValue(5).ToString();
+                    matricula.telefono = this.lector.GetValue(6).ToString();
+                    matricula.IDCurso = this.lector.GetValue(7).ToString();
+                    matricula.nombreCurso = this.lector.GetValue(8).ToString();
+                    matricula.duracion = this.lector.GetValue(9).ToString();
+                    matricula.periodo = this.lector.GetValue(10).ToString();
+                    matricula.estado = this.lector.GetValue(11).ToString();
+                }
+                else
+                {
+                    throw new Exception("No existe ningun colaborador con el ID " + ID);
+                }
+
+                this.cerrarConexion();
+                this.comando.Dispose();
+                this.lector = null;
+
+                return matricula;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
+        //metodo para actualizar el estado de la matricula
+        public int actualizarEstado(Matricula matricula)
+        {
+            try
+            {
+                if (matricula != null)
+                {
+                    this.abrirConexion();
+                    this.comando = new SqlCommand();
+                    this.comando.Connection = this.cnx;
+                    this.comando.CommandType = CommandType.StoredProcedure;
+                    this.comando.CommandText = "[PA_Act_EstadoMatricula]";
+
+                    this.comando.Parameters.AddWithValue("@IDCurso", matricula.IDCurso);
+                    this.comando.Parameters.AddWithValue("@IDInstitucional", matricula.IDInstitucional);
+                    this.comando.Parameters.AddWithValue("@estado", matricula.estado);
+
+                    this.comando.ExecuteNonQuery();
+                    this.cerrarConexion();
+                    this.comando.Dispose();
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                //throw ex;
+                new Exception("Error");
+                return 0;
             }
         }
     }
