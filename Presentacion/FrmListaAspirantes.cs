@@ -109,5 +109,6 @@ namespace Presentacion
                 this.consultarLista(this.cboxPuesto.Text.Trim());
             }
         }
+
     }//Fin del namespace
 }// Fin de la clase

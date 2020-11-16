@@ -120,7 +120,7 @@
             // 
             this.btnGestionCursos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestionCursos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGestionCursos.Location = new System.Drawing.Point(3, 452);
+            this.btnGestionCursos.Location = new System.Drawing.Point(6, 452);
             this.btnGestionCursos.Name = "btnGestionCursos";
             this.btnGestionCursos.Size = new System.Drawing.Size(262, 35);
             this.btnGestionCursos.TabIndex = 8;
@@ -136,7 +136,7 @@
             this.btnConsultaMatricula.Name = "btnConsultaMatricula";
             this.btnConsultaMatricula.Size = new System.Drawing.Size(262, 35);
             this.btnConsultaMatricula.TabIndex = 7;
-            this.btnConsultaMatricula.Text = "Consultar matrícula";
+            this.btnConsultaMatricula.Text = "Finalizar capacitación";
             this.btnConsultaMatricula.UseVisualStyleBackColor = true;
             this.btnConsultaMatricula.Click += new System.EventHandler(this.btnConsultaMatricula_Click);
             // 
