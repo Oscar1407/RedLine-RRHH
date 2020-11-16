@@ -90,6 +90,8 @@ inner join [TelefonoAspirante] t with(nolock) on t.idAspirante = a.idAspirante
 where a.idAspirante = @idAspirante
 go
 
+select * from Aspirante
+
 drop procedure [PA_Cns_Aspirantes]
 
 insert into Aspirante values ('B61126', '116420357','Fabian','Bolaños','Muñoz','Joven, recien egresado','Analista de sistemas');
@@ -125,9 +127,11 @@ nombre varchar(25) not null,
 primerApellido varchar(25) not null,
 segundoApellido varchar(25) not null,
 motivo varchar (200) not null,
-puesto varchar (50) not null
+puesto varchar (50) not null,
+fechaDespido datetime not null,
 )
 go
+
 
 --tabla para el correo del colaborador despedido
 create table [CorreoDespido]
@@ -149,6 +153,7 @@ constraint fk_telefonoDespido foreign key (idColaborador) references [Despido] (
 )
 go
 
+
 --procedimientos almacenados para agregar nuevos despidos
 create procedure [PA_Ins_Despido]
 (
@@ -158,14 +163,13 @@ create procedure [PA_Ins_Despido]
 @primerApellido varchar(25),
 @segundoApellido varchar(25),
 @puesto varchar (50),
-@motivo varchar (200)
-
+@motivo varchar (200),
+@fechaDespido datetime
 )
 as
-insert into [Despido](idColaborador, cedula, nombre, primerApellido, segundoApellido, motivo, puesto)
-values(@idColaborador, @cedula, @nombre, @primerApellido, @segundoApellido, @motivo, @puesto)
+insert into [Despido](idColaborador, cedula, nombre, primerApellido, segundoApellido, motivo, puesto, fechaDespido)
+values(@idColaborador, @cedula, @nombre, @primerApellido, @segundoApellido, @motivo, @puesto, @fechaDespido)
 go
-
 
 --Correo
 create procedure [PA_Ins_CorreoDespido]
@@ -188,6 +192,33 @@ insert into [TelefonoDespido](idColaborador, telefono)
 values(@idColaborador, @telefono)
 go
 
+
+-- Procedimiento para buscar despidos por fechas
+if ( exists(select name from dbo.sysobjects where name = 'Sp_Cns_Despidos_X_Fechas'))
+drop procedure [Sp_Cns_Despidos_X_Fechas]
+go
+create  procedure [Sp_Cns_Despidos_X_Fechas](
+@fechaInicial datetime,
+@fechaFinal datetime)
+as
+select  
+d.idColaborador, 
+d.cedula, 
+d.nombre, 
+d.primerApellido, 
+d.segundoApellido,
+d.motivo,
+d.puesto,
+d.fechaDespido,
+c.correo,
+t.telefono
+from  Despido d with(nolock)
+inner join [CorreoDespido] c with(nolock) on c.idColaborador = d.idColaborador
+inner join [TelefonoDespido] t with(nolock) on t.idColaborador = d.idColaborador
+where  d.fechaDespido between @fechaInicial and  @fechaFinal
+order by  d.fechaDespido
+go
+
 select * from Despido
 --procedimiento para comprobar existencia de un despido repetido
 create procedure [PA_Cns_ExistenciaDespido](@idColaborador varchar(25))
@@ -195,7 +226,7 @@ as
 select count(*) as existe from [Despido] where idColaborador = @idColaborador
 go
 
-exec [PA_Cns_ExistenciaDespido] @idColaborador = 'B70988'
+exec [PA_Cns_ExistenciaDespido] @idColaborador = 'B88543'
 go
 
 delete from CorreoDespido
@@ -271,3 +302,4 @@ go
 exec [PA_Cns_ListaAspirantes] @puestoTrabajo = 'Administrador de bases de datos'
 go
 
+select * from Despido

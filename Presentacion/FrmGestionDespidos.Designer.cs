@@ -67,6 +67,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxInsta = new System.Windows.Forms.PictureBox();
             this.pictureBoxFace = new System.Windows.Forms.PictureBox();
+            this.dateTime = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMenu.SuspendLayout();
@@ -188,7 +190,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(310, 133);
+            this.label11.Location = new System.Drawing.Point(299, 133);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(264, 27);
             this.label11.TabIndex = 45;
@@ -209,6 +211,8 @@
             // pnlDespidos
             // 
             this.pnlDespidos.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.pnlDespidos.Controls.Add(this.label12);
+            this.pnlDespidos.Controls.Add(this.dateTime);
             this.pnlDespidos.Controls.Add(this.pictureBoxBuscarAsp);
             this.pnlDespidos.Controls.Add(this.btnCoonsultarDesp);
             this.pnlDespidos.Controls.Add(this.btnAgregarDespido);
@@ -274,7 +278,7 @@
             // txtMotivoDes
             // 
             this.txtMotivoDes.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMotivoDes.Location = new System.Drawing.Point(615, 211);
+            this.txtMotivoDes.Location = new System.Drawing.Point(543, 265);
             this.txtMotivoDes.Name = "txtMotivoDes";
             this.txtMotivoDes.Size = new System.Drawing.Size(212, 96);
             this.txtMotivoDes.TabIndex = 40;
@@ -283,7 +287,7 @@
             // txtPuesto
             // 
             this.txtPuesto.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPuesto.Location = new System.Drawing.Point(685, 116);
+            this.txtPuesto.Location = new System.Drawing.Point(644, 183);
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Size = new System.Drawing.Size(142, 26);
             this.txtPuesto.TabIndex = 39;
@@ -291,7 +295,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(685, 80);
+            this.txtCorreo.Location = new System.Drawing.Point(644, 142);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(142, 26);
             this.txtCorreo.TabIndex = 38;
@@ -311,7 +315,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(685, 37);
+            this.txtTelefono.Location = new System.Drawing.Point(644, 101);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(142, 26);
             this.txtTelefono.TabIndex = 37;
@@ -361,7 +365,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(587, 117);
+            this.label10.Location = new System.Drawing.Point(563, 186);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 23);
             this.label10.TabIndex = 31;
@@ -372,7 +376,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(426, 258);
+            this.label8.Location = new System.Drawing.Point(366, 301);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(171, 23);
             this.label8.TabIndex = 30;
@@ -383,7 +387,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(594, 75);
+            this.label7.Location = new System.Drawing.Point(563, 145);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 23);
             this.label7.TabIndex = 29;
@@ -394,7 +398,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(570, 37);
+            this.label6.Location = new System.Drawing.Point(539, 104);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 23);
             this.label6.TabIndex = 28;
@@ -510,6 +514,25 @@
             this.pictureBoxFace.TabIndex = 0;
             this.pictureBoxFace.TabStop = false;
             // 
+            // dateTime
+            // 
+            this.dateTime.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTime.Location = new System.Drawing.Point(669, 34);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.Size = new System.Drawing.Size(252, 26);
+            this.dateTime.TabIndex = 49;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(505, 37);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(158, 23);
+            this.label12.TabIndex = 50;
+            this.label12.Text = "Fecha de despido:";
+            // 
             // FrmGestionDespidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -583,5 +606,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBoxInsta;
         private System.Windows.Forms.PictureBox pictureBoxFace;
+        private System.Windows.Forms.DateTimePicker dateTime;
+        private System.Windows.Forms.Label label12;
     }
 }

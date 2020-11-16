@@ -26,5 +26,7 @@ namespace LogicaNegocio
 
         public string motivoDespido { set; get; }
 
+        public DateTime fechaDespido { get; set; }
+
     }// Fin de la clase
 }// Fin del namespace

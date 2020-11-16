@@ -356,6 +356,7 @@ namespace AccesoDatos
                     this.comando.Parameters.AddWithValue("@segundoApellido", despido.segundoApellido);
                     this.comando.Parameters.AddWithValue("@puesto", despido.puestoTrabajo);
                     this.comando.Parameters.AddWithValue("@motivo", despido.motivoDespido);
+                    this.comando.Parameters.AddWithValue("@fechaDespido", despido.fechaDespido);
 
                     this.comando.ExecuteNonQuery();
                     this.cerrarConexion();
@@ -627,6 +628,36 @@ namespace AccesoDatos
             }
         }
 
+
+        //metodo para consultar la lista de despidos
+        public DataSet consultaListaDespidos(DateTime fechaInicial, DateTime fechaFinal )
+        {
+            try
+            {
+                this.abrirConexion();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.conexionA;
+                this.comando.CommandType = CommandType.StoredProcedure;
+                this.comando.CommandText = "[Sp_Cns_Despidos_X_Fechas]";
+                this.comando.Parameters.AddWithValue("@fechaInicial", fechaInicial);
+                this.comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+
+                this.adaptador = new SqlDataAdapter();
+                this.adaptador.SelectCommand = this.comando;
+                this.datos = new DataSet();
+                this.adaptador.Fill(this.datos);
+
+                this.cerrarConexion();
+                this.comando.Dispose();
+                this.adaptador.Dispose();
+
+                return this.datos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
     }// Fin de la clase

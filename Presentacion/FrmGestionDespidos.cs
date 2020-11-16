@@ -23,6 +23,8 @@ namespace Presentacion
     {
         FrmListaAspirantes listaAspirantes;
 
+        FrmListaDespidos listaDespidos;
+
         FrmContratacionesDespidos frmContrataciones;
 
         Despido despido;
@@ -126,6 +128,7 @@ namespace Presentacion
                     this.despido.correo = this.txtCorreo.Text.Trim();
                     this.despido.puestoTrabajo = this.txtPuesto.Text.Trim();
                     this.despido.motivoDespido = this.txtMotivoDes.Text.Trim();
+                    this.despido.fechaDespido = DateTime.Parse( this.dateTime.Text.Trim());
 
                     if (MessageBox.Show("¿Está seguro de que quiere agregar al colaborador a despidos?", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
@@ -236,6 +239,11 @@ namespace Presentacion
 
         private void btnCoonsultarDesp_Click(object sender, EventArgs e)
         {
+            listaDespidos = new FrmListaDespidos();
+            listaDespidos.Show();
+            this.Close();
+            this.Dispose();
+
         }
     }//Fin de la clase
 }//Fin del namespace
