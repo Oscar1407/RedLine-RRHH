@@ -176,7 +176,7 @@ namespace Presentacion
                         {
                             if (this.conexion.actualizarEstado(matricula) == 1)
                             {
-                                MessageBox.Show("Colaborador modificado con éxito", "Proceso Aplicado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Matrícula finalizada.", "Proceso Aplicado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 scope.Complete();
                             }
                             else

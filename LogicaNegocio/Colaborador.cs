@@ -46,7 +46,7 @@ namespace LogicaNegocio
         {
             double salario = 0.0;
 
-            if (puesto.Equals("Administracion de bases de datos"))
+            if (puesto.Equals("Administrador de bases de datos"))
             {
                 salario = 500000.0;
             } else if (puesto.Equals("Desarrollador Junior"))

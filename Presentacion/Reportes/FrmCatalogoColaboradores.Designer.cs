@@ -199,11 +199,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(908, 620);
+            this.ControlBox = false;
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblSubT);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.pnlTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmCatalogoColaboradores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de colaboradores";

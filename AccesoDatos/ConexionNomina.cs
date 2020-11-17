@@ -25,7 +25,7 @@ namespace AccesoDatos
         {
             try
             {
-                string StrConexion = @"Data Source=FABIAN-PC\SQLEXPRESS;Initial Catalog=RedLine-DataBase;User ID=userRedLine;Password=ucr2020";
+                string StrConexion = @"Data Source=DESKTOP-M0HE3VI\MSSQLSERVERDEV;Initial Catalog=RedLine-DataBase;User ID=RedLine-UserAdmin;Password=Osc.pac1407"; ;
                 this.cnx = new SqlConnection(StrConexion);
                 this.cnx.Open();
             }
@@ -112,9 +112,9 @@ namespace AccesoDatos
                     this.comando.Parameters.AddWithValue("@segundoApellido", colaborador.segundoApellido);
                     this.comando.Parameters.AddWithValue("@direccion", colaborador.direccion);
                     this.comando.Parameters.AddWithValue("@puestoTrabajo", colaborador.puestoTrabajo);
-                    this.comando.Parameters.AddWithValue("@salarioBruto", colaborador.SalarioBruto);
                     this.comando.Parameters.AddWithValue("@salarioNeto", colaborador.SalarioNeto);
-
+                    this.comando.Parameters.AddWithValue("@salarioBruto", colaborador.SalarioBruto);
+                    
                     this.comando.ExecuteNonQuery();
                     this.cerrarConexion();
                     this.comando.Dispose();
@@ -128,6 +128,7 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
+                //throw ex;
                 new Exception("Debe ingresar un valor en el ID Institucional");
                 return 0;
             }
@@ -161,6 +162,7 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
+                //throw ex;
                 new Exception("Debe ingresar un valor en el ID Institucional");
                 return 0;
             }
@@ -194,6 +196,7 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
+                //throw ex;
                 new Exception("Debe ingresar un valor en el ID Institucional");
                 return 0;
             }
@@ -227,6 +230,7 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
+                //throw ex;
                 new Exception("Debe ingresar un valor en el ID Institucional");
                 return 0;
             }

@@ -164,8 +164,9 @@ create procedure [PA_Ins_ColaboradorNomina]
 @salarioBruto decimal (12,2))
 as
 insert into [Nomina](IDInstitucional, cedula, nombre, primerApellido, segundoApellido, direccion, puestoTrabajo, salarioBruto, salarioNeto)
-values(@idColaborador, @cedula, @nombre, @primerApellido, @segundoApellido, @direccion, @puestoTrabajo,@salarioNeto,@salarioBruto)
+values(@idColaborador, @cedula, @nombre, @primerApellido, @segundoApellido, @direccion, @puestoTrabajo,@salarioBruto,@salarioNeto)
 go
+
 
 create procedure [PA_Eli_Aspirante](@IDInstitucional varchar(25))
 as

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -68,6 +69,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxInsta = new System.Windows.Forms.PictureBox();
             this.pictureBoxFace = new System.Windows.Forms.PictureBox();
+            this.toolTipMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMenu.SuspendLayout();
@@ -135,6 +137,7 @@
             this.btnLogout.Size = new System.Drawing.Size(75, 30);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Logout";
+            this.toolTipMensaje.SetToolTip(this.btnLogout, "Presione para salir a la pantalla principal.");
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
@@ -234,6 +237,7 @@
             this.btnReporte.Size = new System.Drawing.Size(155, 35);
             this.btnReporte.TabIndex = 72;
             this.btnReporte.Text = "Generar Reporte";
+            this.toolTipMensaje.SetToolTip(this.btnReporte, "Presione para generar el reporte de los colaboradores en nómina.");
             this.btnReporte.UseVisualStyleBackColor = false;
             this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
@@ -297,6 +301,7 @@
             this.pictureBoxBuscarAsp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBuscarAsp.TabIndex = 24;
             this.pictureBoxBuscarAsp.TabStop = false;
+            this.toolTipMensaje.SetToolTip(this.pictureBoxBuscarAsp, "Presione para buscar a un aspirante.");
             this.pictureBoxBuscarAsp.Click += new System.EventHandler(this.pictureBoxBuscarAsp_Click);
             // 
             // label10
@@ -463,6 +468,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(155, 35);
             this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar a la nómina";
+            this.toolTipMensaje.SetToolTip(this.btnAgregar, "Presione para agregar al aspirante a la nómina.");
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -597,5 +603,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cbxTipoHorario;
         private System.Windows.Forms.Button btnReporte;
+        private System.Windows.Forms.ToolTip toolTipMensaje;
     }
 }

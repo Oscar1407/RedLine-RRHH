@@ -61,21 +61,16 @@ namespace Presentacion
             {
                 MessageBox.Show("Debe llenar el campo de la identificación institucional", "Proceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                this.user.idInstitucional = this.txtIDInstitucional.Text.Trim();
-            }//fin validacion id
-
-            //evaluacion de si la contraseña esta vacia
-            if (string.IsNullOrEmpty(this.txtPassword.Text))
+            else if (string.IsNullOrEmpty(this.txtPassword.Text))
             {
                 MessageBox.Show("Debe llenar el campo de la contraseña", "Proceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+                this.user.idInstitucional = this.txtIDInstitucional.Text.Trim();
                 this.user.password = this.txtPassword.Text.Trim();
             }//fin validacion contraseña
-
+            
             //validacion combobox
             switch (this.cbxRol.SelectedIndex)
                 {
@@ -102,40 +97,24 @@ namespace Presentacion
                     this.capacitaciones.Show();
                     this.Dispose();
                 }
-                //agregar demás módulos para esta parte
-
-            }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrecta", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-
-            //metodo de autenticacion Contrataciones
-            if (this.conexion.autenticacion(this.user))
-            {
-                if (this.user.rol.Equals("Administrador Contrataciones"))
+                else if (this.user.rol.Equals("Administrador Contrataciones"))
                 {
                     this.autenticado = true;
                     this.contrataciones.Show();
                     this.Dispose();
+                } else if (this.user.rol.Equals("Administrador Nomina"))
+                {
+                    this.autenticado = true;
+                    this.nomina.Show();
+                    this.Dispose();
+                }//Login Nomina                
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrecta", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 //agregar demás módulos para esta parte
 
-            }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrecta", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            if (this.user.rol.Equals("Administrador Nomina"))
-            {
-                this.autenticado = true;
-                this.nomina.Show();
-                this.Dispose();
-            }//Login Nomina
-
-
+            }           
         }
 
 
