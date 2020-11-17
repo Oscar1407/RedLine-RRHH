@@ -78,9 +78,9 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Location = new System.Drawing.Point(233, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(316, 40);
+            this.lblTitulo.Size = new System.Drawing.Size(289, 40);
             this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "Recursos Hummanos";
+            this.lblTitulo.Text = "Recursos Humanos";
             // 
             // pictureBox1
             // 
@@ -206,6 +206,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBoxInsta
             // 
@@ -216,6 +217,7 @@
             this.pictureBoxInsta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxInsta.TabIndex = 1;
             this.pictureBoxInsta.TabStop = false;
+            this.pictureBoxInsta.Click += new System.EventHandler(this.pictureBoxInsta_Click);
             // 
             // pictureBoxFace
             // 
@@ -226,6 +228,7 @@
             this.pictureBoxFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFace.TabIndex = 0;
             this.pictureBoxFace.TabStop = false;
+            this.pictureBoxFace.Click += new System.EventHandler(this.pictureBoxFace_Click);
             // 
             // groupBox2
             // 
@@ -245,10 +248,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(315, 17);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(343, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 27);
+            this.label1.Size = new System.Drawing.Size(185, 23);
             this.label1.TabIndex = 25;
             this.label1.Text = "Seleccione el puesto:";
             // 

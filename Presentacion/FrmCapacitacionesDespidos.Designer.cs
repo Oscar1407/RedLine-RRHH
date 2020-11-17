@@ -99,9 +99,9 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Location = new System.Drawing.Point(233, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(316, 40);
+            this.lblTitulo.Size = new System.Drawing.Size(289, 40);
             this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "Recursos Hummanos";
+            this.lblTitulo.Text = "Recursos Humanos";
             // 
             // pictureBox1
             // 

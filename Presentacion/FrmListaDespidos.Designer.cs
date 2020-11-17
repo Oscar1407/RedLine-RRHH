@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -51,6 +52,7 @@
             this.pictureBoxFace = new System.Windows.Forms.PictureBox();
             this.lblSubT = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
+            this.toolTipMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMenu.SuspendLayout();
@@ -80,11 +82,11 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Transparent;
-            this.lblTitulo.Location = new System.Drawing.Point(296, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(325, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(316, 40);
+            this.lblTitulo.Size = new System.Drawing.Size(289, 40);
             this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "Recursos Hummanos";
+            this.lblTitulo.Text = "Recursos Humanos";
             // 
             // pictureBox1
             // 
@@ -195,6 +197,7 @@
             this.btnConsultar.Size = new System.Drawing.Size(81, 30);
             this.btnConsultar.TabIndex = 49;
             this.btnConsultar.Text = "Consultar";
+            this.toolTipMensaje.SetToolTip(this.btnConsultar, "Presione para consultar en el rango de fechas indicado.");
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
@@ -290,6 +293,7 @@
             this.pictureBoxInsta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxInsta.TabIndex = 1;
             this.pictureBoxInsta.TabStop = false;
+            this.pictureBoxInsta.Click += new System.EventHandler(this.pictureBoxInsta_Click);
             // 
             // pictureBoxFace
             // 
@@ -300,6 +304,7 @@
             this.pictureBoxFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFace.TabIndex = 0;
             this.pictureBoxFace.TabStop = false;
+            this.pictureBoxFace.Click += new System.EventHandler(this.pictureBoxFace_Click);
             // 
             // lblSubT
             // 
@@ -379,5 +384,6 @@
         private System.Windows.Forms.DateTimePicker dateTimeFinal;
         private System.Windows.Forms.DateTimePicker dateTimeInicial;
         private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.ToolTip toolTipMensaje;
     }
 }

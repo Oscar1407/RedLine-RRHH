@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -40,6 +41,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
             this.pnlDespidos = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dateTime = new System.Windows.Forms.DateTimePicker();
             this.pictureBoxBuscarAsp = new System.Windows.Forms.PictureBox();
             this.btnCoonsultarDesp = new System.Windows.Forms.Button();
             this.btnAgregarDespido = new System.Windows.Forms.Button();
@@ -67,8 +70,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxInsta = new System.Windows.Forms.PictureBox();
             this.pictureBoxFace = new System.Windows.Forms.PictureBox();
-            this.dateTime = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
+            this.toolTipMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMenu.SuspendLayout();
@@ -100,9 +102,9 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Location = new System.Drawing.Point(285, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(316, 40);
+            this.lblTitulo.Size = new System.Drawing.Size(289, 40);
             this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "Recursos Hummanos";
+            this.lblTitulo.Text = "Recursos Humanos";
             // 
             // pictureBox1
             // 
@@ -240,6 +242,26 @@
             this.pnlDespidos.Size = new System.Drawing.Size(933, 478);
             this.pnlDespidos.TabIndex = 47;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(505, 37);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(158, 23);
+            this.label12.TabIndex = 50;
+            this.label12.Text = "Fecha de despido:";
+            // 
+            // dateTime
+            // 
+            this.dateTime.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTime.Location = new System.Drawing.Point(669, 34);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.Size = new System.Drawing.Size(252, 26);
+            this.dateTime.TabIndex = 49;
+            this.toolTipMensaje.SetToolTip(this.dateTime, "Presione para seleccionar la fecha de despido.");
+            // 
             // pictureBoxBuscarAsp
             // 
             this.pictureBoxBuscarAsp.Image = global::Presentacion.Properties.Resources._16__Search_;
@@ -249,6 +271,7 @@
             this.pictureBoxBuscarAsp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBuscarAsp.TabIndex = 43;
             this.pictureBoxBuscarAsp.TabStop = false;
+            this.toolTipMensaje.SetToolTip(this.pictureBoxBuscarAsp, "Presione para realizar la consulta.");
             this.pictureBoxBuscarAsp.Click += new System.EventHandler(this.pictureBoxBuscarAsp_Click_1);
             // 
             // btnCoonsultarDesp
@@ -359,6 +382,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(162, 26);
             this.txtID.TabIndex = 32;
+            this.toolTipMensaje.SetToolTip(this.txtID, "Inserte el id del colaborador que desea consultar.");
             // 
             // label10
             // 
@@ -493,6 +517,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBoxInsta
             // 
@@ -503,6 +528,7 @@
             this.pictureBoxInsta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxInsta.TabIndex = 1;
             this.pictureBoxInsta.TabStop = false;
+            this.pictureBoxInsta.Click += new System.EventHandler(this.pictureBoxInsta_Click);
             // 
             // pictureBoxFace
             // 
@@ -513,25 +539,7 @@
             this.pictureBoxFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFace.TabIndex = 0;
             this.pictureBoxFace.TabStop = false;
-            // 
-            // dateTime
-            // 
-            this.dateTime.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTime.Location = new System.Drawing.Point(669, 34);
-            this.dateTime.Name = "dateTime";
-            this.dateTime.Size = new System.Drawing.Size(252, 26);
-            this.dateTime.TabIndex = 49;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(505, 37);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(158, 23);
-            this.label12.TabIndex = 50;
-            this.label12.Text = "Fecha de despido:";
+            this.pictureBoxFace.Click += new System.EventHandler(this.pictureBoxFace_Click);
             // 
             // FrmGestionDespidos
             // 
@@ -608,5 +616,6 @@
         private System.Windows.Forms.PictureBox pictureBoxFace;
         private System.Windows.Forms.DateTimePicker dateTime;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ToolTip toolTipMensaje;
     }
 }
