@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 //llamado a la capa de logica de negocios
 using LogicaNegocio;
 
@@ -16,11 +18,13 @@ using AccesoDatos;
 
 //implementacion control de transacciones
 using System.Transactions;
+using Presentacion.Reportes;
 
 namespace Presentacion
 {
     public partial class FrmNomina : Form
     {
+        FrmCatalogoColaboradores frmReporte;
 
         Aspirante aspirante;
 
@@ -163,6 +167,25 @@ namespace Presentacion
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             this.guardarAspirante();
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                frmReporte = new FrmCatalogoColaboradores();
+                frmReporte.Show();
+               
+                this.Close();
+                this.Dispose();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }
