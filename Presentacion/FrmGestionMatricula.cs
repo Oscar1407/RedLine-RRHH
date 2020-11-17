@@ -93,13 +93,13 @@ namespace Presentacion
             this.Dispose();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.limpiar();
             this.txtIDInstitucional.Enabled = true;
         }
 
-        private void btnBuscarColaborador_Click(object sender, EventArgs e)
+        private void btnBuscarColaborador_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -120,7 +120,7 @@ namespace Presentacion
                         if (matricula.estado.Equals("En curso"))
                         {
                             this.cbxEstado.SelectedIndex = 0;
-                        } 
+                        }
                         else if (matricula.estado.Equals("Finalizado"))
                         {
                             this.cbxEstado.SelectedIndex = 1;
@@ -148,13 +148,13 @@ namespace Presentacion
             }
         }
 
-        private void btnFinalizar_Click(object sender, EventArgs e)
+        private void btnFinalizar_Click_1(object sender, EventArgs e)
         {
             try
             {
                 matricula = new Matricula();
 
-                if(this.cbxEstado.SelectedItem.Equals("En curso"))
+                if (this.cbxEstado.SelectedItem.Equals("En curso"))
                 {
                     MessageBox.Show("Debe actualizar el estado de la matrícula", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -192,5 +192,21 @@ namespace Presentacion
                 throw new TransactionAbortedException(String.Format("No se pudo completar la transacción"), ex);
             }
         }
+
+        private void pictureBoxFace_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.srp.ucr.ac.cr/");
+        }
+
+        private void pictureBoxInsta_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.instagram.com/aeusp.ucr/?hl=es-la");
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://twitter.com/UniversidadCR?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor");
+        }
+
     }
 }

@@ -353,6 +353,9 @@ go
 exec [PA_Cns_Matricula] @IDCurso = '2'
 go
 
+delete from [Matricula] where IDInstitucional = 'B70988'
+go
+
 --procedimiento almacenado para consultar el estado de la matrícula
 create procedure [PA_Cns_MatriculaEstado](@IDInstitucional varchar(25))
 as

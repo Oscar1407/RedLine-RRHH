@@ -181,5 +181,20 @@ namespace Presentacion
                 throw ex;
             }
         }
+
+        private void pictureBoxFace_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.srp.ucr.ac.cr/");
+        }
+
+        private void pictureBoxInsta_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.instagram.com/aeusp.ucr/?hl=es-la");
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://twitter.com/UniversidadCR?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor");
+        }
     }
 }
