@@ -50,19 +50,6 @@ namespace Presentacion
             }
         }
 
-        private void txtIDCurso_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                this.consultarCurso();
-                this.consultarHorario();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         //llena la tabla con los datos del cliente
         private void consultarCurso()
         {
@@ -94,6 +81,34 @@ namespace Presentacion
 
                 throw ex;
             }
+        }
+
+        private void txtIDCurso_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.consultarCurso();
+                this.consultarHorario();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBoxFace_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.srp.ucr.ac.cr/");
+        }
+
+        private void pictureBoxInsta_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.instagram.com/aeusp.ucr/?hl=es-la");
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://twitter.com/UniversidadCR?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor");
         }
     }
 }
