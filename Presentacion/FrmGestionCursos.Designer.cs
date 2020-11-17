@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionCursos));
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
@@ -64,6 +65,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxInsta = new System.Windows.Forms.PictureBox();
             this.pictureBoxFace = new System.Windows.Forms.PictureBox();
+            this.toolTipMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.PanelCapacitaciones.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -542,5 +544,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBoxInsta;
         private System.Windows.Forms.PictureBox pictureBoxFace;
+        private System.Windows.Forms.ToolTip toolTipMensaje;
     }
 }

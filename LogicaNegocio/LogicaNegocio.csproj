@@ -44,6 +44,7 @@
     <Compile Include="Aspirante.cs" />
     <Compile Include="Colaborador.cs" />
     <Compile Include="Curso.cs" />
+    <Compile Include="Deducciones.cs" />
     <Compile Include="Despido.cs" />
     <Compile Include="HorarioCurso.cs" />
     <Compile Include="Matricula.cs" />

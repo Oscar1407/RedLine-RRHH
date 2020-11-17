@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarNuevaMatricula));
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.PanelCapacitaciones = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -74,7 +76,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxInsta = new System.Windows.Forms.PictureBox();
             this.pictureBoxFace = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.toolTipMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.PanelCapacitaciones.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,6 +96,7 @@
             this.btnLogOut.Size = new System.Drawing.Size(94, 32);
             this.btnLogOut.TabIndex = 5;
             this.btnLogOut.Text = "Log Out";
+            this.toolTipMensaje.SetToolTip(this.btnLogOut, "Presione para volver a la pantalla principal");
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
@@ -107,6 +110,7 @@
             this.btnRegresar.Size = new System.Drawing.Size(168, 35);
             this.btnRegresar.TabIndex = 1;
             this.btnRegresar.Text = "Volver al menú";
+            this.toolTipMensaje.SetToolTip(this.btnRegresar, "Presione para regresar al menú principal");
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
@@ -149,6 +153,16 @@
             this.PanelCapacitaciones.Size = new System.Drawing.Size(1178, 590);
             this.PanelCapacitaciones.TabIndex = 7;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(3, 11);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(196, 27);
+            this.label13.TabIndex = 40;
+            this.label13.Text = "Realizar matrículas";
+            // 
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -170,6 +184,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(168, 33);
             this.btnCancelar.TabIndex = 39;
             this.btnCancelar.Text = "Cancelar";
+            this.toolTipMensaje.SetToolTip(this.btnCancelar, "Presione para limpiar los campos");
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -202,6 +217,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(168, 33);
             this.btnAgregar.TabIndex = 38;
             this.btnAgregar.Text = "Agregar matrícula";
+            this.toolTipMensaje.SetToolTip(this.btnAgregar, "Presione para matricular al colaborador en el curso seleccionado");
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -290,6 +306,7 @@
             this.btnBuscarCurso.Size = new System.Drawing.Size(121, 33);
             this.btnBuscarCurso.TabIndex = 18;
             this.btnBuscarCurso.Text = "Buscar curso";
+            this.toolTipMensaje.SetToolTip(this.btnBuscarCurso, "Presione para buscar un curso según su ID");
             this.btnBuscarCurso.UseVisualStyleBackColor = false;
             this.btnBuscarCurso.Click += new System.EventHandler(this.btnBuscarCurso_Click);
             // 
@@ -384,6 +401,7 @@
             this.btnBuscarColaborador.Size = new System.Drawing.Size(155, 33);
             this.btnBuscarColaborador.TabIndex = 20;
             this.btnBuscarColaborador.Text = "Buscar colaborador";
+            this.toolTipMensaje.SetToolTip(this.btnBuscarColaborador, "Presione para buscar a un colaborador según su ID");
             this.btnBuscarColaborador.UseVisualStyleBackColor = false;
             this.btnBuscarColaborador.Click += new System.EventHandler(this.btnBuscarColaborador_Click);
             // 
@@ -591,16 +609,6 @@
             this.pictureBoxFace.TabStop = false;
             this.pictureBoxFace.Click += new System.EventHandler(this.pictureBoxFace_Click);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(3, 11);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(196, 27);
-            this.label13.TabIndex = 40;
-            this.label13.Text = "Realizar matrículas";
-            // 
             // FrmAgregarNuevaMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -683,5 +691,6 @@
         private System.Windows.Forms.PictureBox pictureBoxInsta;
         private System.Windows.Forms.PictureBox pictureBoxFace;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ToolTip toolTipMensaje;
     }
 }

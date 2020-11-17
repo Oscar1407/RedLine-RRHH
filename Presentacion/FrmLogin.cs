@@ -27,6 +27,8 @@ namespace Presentacion
 
         private FrmContratacionesDespidos contrataciones;
 
+        private FrmNomina nomina;
+
         private Conexion conexion;
 
         private Usuario user;
@@ -50,6 +52,7 @@ namespace Presentacion
         {
             this.capacitaciones = new FrmAdministradorCapacitaciones();
             this.contrataciones = new FrmContratacionesDespidos();
+            this.nomina = new FrmNomina();
             this.conexion = new Conexion();
             this.user = new Usuario();
 
@@ -124,6 +127,13 @@ namespace Presentacion
             {
                 MessageBox.Show("Usuario o contraseña incorrecta", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            if (this.user.rol.Equals("Administrador Nomina"))
+            {
+                this.autenticado = true;
+                this.nomina.Show();
+                this.Dispose();
+            }//Login Nomina
 
 
         }

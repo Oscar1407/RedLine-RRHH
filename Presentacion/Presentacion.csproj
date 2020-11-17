@@ -131,6 +131,12 @@
     <Compile Include="FrmListaMatricula.Designer.cs">
       <DependentUpon>FrmListaMatricula.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNomina.Designer.cs">
+      <DependentUpon>FrmNomina.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListaMatricula.resx">
       <DependentUpon>FrmListaMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNomina.resx">
+      <DependentUpon>FrmNomina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

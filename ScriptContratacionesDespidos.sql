@@ -14,6 +14,8 @@ puestoAspirar varchar (50) not null
 )
 go
 
+select * from [Aspirante]
+
 --tabla para el correo del aspirante
 create table [CorreoAspirante]
 (
@@ -90,15 +92,11 @@ inner join [TelefonoAspirante] t with(nolock) on t.idAspirante = a.idAspirante
 where a.idAspirante = @idAspirante
 go
 
-select * from Aspirante
-
-drop procedure [PA_Cns_Aspirantes]
-
 insert into Aspirante values ('B61126', '116420357','Fabian','Bolaños','Muñoz','Joven, recien egresado','Analista de sistemas');
 insert into CorreoAspirante values ('B61126','fabm16@hotmail.com');
 insert into TelefonoAspirante values ('B61126', '62740524');
 
-exec [PA_Cns_Aspirantes] @idAspirante ='B61126'
+select * from Aspirante
 go
 
 -- Procedimiento almacenado para consultar los empleados de la nómina
@@ -226,15 +224,6 @@ as
 select count(*) as existe from [Despido] where idColaborador = @idColaborador
 go
 
-exec [PA_Cns_ExistenciaDespido] @idColaborador = 'B88543'
-go
-
-delete from CorreoDespido
-delete from TelefonoDespido
-delete from Despido
-
-select * from Despido
-
 --procedimientos almacenados para eliminar un colaborador de la nómina desde el modulo de contrataciones y despidos
 create procedure [PA_Eli_ColaboradorNomina](@IDInstitucional varchar(25))
 as
@@ -276,10 +265,6 @@ as
 delete from [DeduccionAguinaldo] where IDInstitucional = @IDInstitucional
 go
 
-select * from Aspirante
-
-drop procedure [PA_Cns_ListaAspirantes]
-
 --procedimiento almacenado para consultar lista de despidos por puesto
 create procedure [PA_Cns_ListaAspirantes] (@puestoTrabajo varchar(100))
 as
@@ -297,9 +282,3 @@ inner join [CorreoAspirante] c with(nolock) on c.idAspirante = n.idAspirante
 inner join [TelefonoAspirante] t with(nolock) on t.idAspirante = n.idAspirante
 where n.puestoAspirar = @puestoTrabajo
 go
-
-
-exec [PA_Cns_ListaAspirantes] @puestoTrabajo = 'Administrador de bases de datos'
-go
-
-select * from Despido

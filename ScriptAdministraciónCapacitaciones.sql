@@ -12,12 +12,6 @@ constraint fk_colaborador foreign key (IDInstitucional) references [Nomina] (IDI
 )
 go
 
-drop table [ColaboradorCapacitacion]
-go
-
-select * from [ColaboradorCapacitacion]
-go
-
 delete from [ColaboradorCapacitacion]
 go
 
@@ -34,11 +28,6 @@ go
 delete from [CorreoColaboradorCapacitaciones]
 go
 
-select * from [CorreoColaboradorCapacitaciones]
-go
-
-drop table [CorreoColaboradorCapacitaciones]
-go
 
 --tabla para el telefono del colaborador
 create table [TelefonoColaboradorCapacitaciones]
@@ -50,13 +39,7 @@ constraint fk_colaboradorTelefono foreign key (IDInstitucional) references [Cola
 )
 go
 
-select * from [TelefonoColaboradorCapacitaciones]
-go
-
-drop table [TelefonoColaboradorCapacitaciones]
-go
-
-delete from [TelefonoColaboradorCapacitaciones] 
+delete from [TelefonoColaboradorCapacitaciones]
 go
 
 --tabla de los cursos de las capacitaciones
@@ -68,8 +51,6 @@ duracion varchar(45) not null
 )
 go
 
-select * from [Curso]
-go
 
 --tabla de los horarios del curso de las capacitaciones
 create table [HorarioCurso]
@@ -83,8 +64,6 @@ constraint fk_d_HorarioCurso foreign key (IDCurso) references [Curso] (IDCurso)
 )
 go
 
-drop table [HorarioCurso]
-go
 
 --tabla de la matricula
 create table [Matricula]
@@ -99,16 +78,7 @@ constraint fk_colaboradorCapacitaciones foreign key (IDInstitucional) references
 )
 go
 
-drop table [Matricula]
-go
-
 delete from [Matricula]
-go
-
-insert into [Matricula] values('2', 'B77064', 'En curso', 'Primer')
-go
-
-select * from [Matricula]
 go
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -154,9 +124,6 @@ as
 select count(*) as existe from [ColaboradorCapacitacion] where IDInstitucional = @IDInstitucional
 go
 
-exec [PA_Cns_ExistenciaColaborador] @IDInstitucional = '1'
-go
-
 --procedimiento almacenado para consultar colaborador por IDInstitucional
 create procedure [PA_Cns_Colaboradores](@IDInstitucional varchar(25))
 as
@@ -187,10 +154,6 @@ from [ColaboradorCapacitacion] c with(nolock)
 inner join [CorreoColaboradorCapacitaciones] e with(nolock) on e.IDInstitucional = c.IDInstitucional
 inner join [TelefonoColaboradorCapacitaciones] t with(nolock) on t.IDInstitucional = c.IDInstitucional
 go
-
-exec [PA_Cns_ListaColaboradores]
-go
-
 
 --procedimientos almacenados para modificar informacion de los colaboradores
 create procedure [PA_Act_Colaborador]
@@ -311,12 +274,6 @@ insert into [HorarioCurso](IDCurso, dia, horaInicio, horaFin)
 values(@IDCurso, @dia, @horaInicio, @horaFin)
 go
 
-select * from [HorarioCurso]
-go
-
-delete from [HorarioCurso]
-go
-
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 --procedimientos almacenados para las matriculas
@@ -350,12 +307,6 @@ inner join [Curso] a with(nolock) on a.IDCurso = m.IDCurso
 where m.IDCurso = @IDCurso
 go
 
-exec [PA_Cns_Matricula] @IDCurso = '2'
-go
-
-delete from [Matricula] where IDInstitucional = 'B70988'
-go
-
 --procedimiento almacenado para consultar el estado de la matrícula
 create procedure [PA_Cns_MatriculaEstado](@IDInstitucional varchar(25))
 as
@@ -377,9 +328,6 @@ inner join [CorreoColaboradorCapacitaciones] e with(nolock) on e.IDInstitucional
 inner join [TelefonoColaboradorCapacitaciones] t with(nolock) on t.IDInstitucional = m.IDInstitucional
 inner join [Curso] a with(nolock) on a.IDCurso = m.IDCurso
 where c.IDInstitucional = @IDInstitucional
-go
-
-exec [PA_Cns_MatriculaEstado] @IDInstitucional = 'B77064'
 go
 
 create procedure [PA_Act_EstadoMatricula](@IDCurso varchar(25), @IDInstitucional varchar(25), @estado varchar(25))

@@ -536,10 +536,12 @@
             this.Controls.Add(this.lblSubT);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmContratacionesDespidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Módulo de contrataciones y depsidos";
+            this.Text = "Módulo de contrataciones y despidos";
             this.Load += new System.EventHandler(this.FrmContratacionesDespidos_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();

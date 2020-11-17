@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdministradorCapacitaciones));
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnGestionCursos = new System.Windows.Forms.Button();
@@ -53,10 +54,11 @@
             this.btnGestion = new System.Windows.Forms.Button();
             this.btnNomina = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.toolTipMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -76,6 +78,7 @@
             this.btnLogOut.Size = new System.Drawing.Size(85, 26);
             this.btnLogOut.TabIndex = 5;
             this.btnLogOut.Text = "Log Out";
+            this.toolTipMensaje.SetToolTip(this.btnLogOut, "Salir a la pantalla principal");
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
@@ -89,6 +92,7 @@
             this.btnGestionCursos.Size = new System.Drawing.Size(262, 35);
             this.btnGestionCursos.TabIndex = 8;
             this.btnGestionCursos.Text = "Administrar los cursos";
+            this.toolTipMensaje.SetToolTip(this.btnGestionCursos, "Gestiona la información de las capacitaciones");
             this.btnGestionCursos.UseVisualStyleBackColor = false;
             this.btnGestionCursos.Click += new System.EventHandler(this.btnGestionCursos_Click);
             // 
@@ -102,6 +106,7 @@
             this.btnConsultaMatricula.Size = new System.Drawing.Size(262, 35);
             this.btnConsultaMatricula.TabIndex = 7;
             this.btnConsultaMatricula.Text = "Finalizar capacitación";
+            this.toolTipMensaje.SetToolTip(this.btnConsultaMatricula, "Cambia el estado de la capacitación");
             this.btnConsultaMatricula.UseVisualStyleBackColor = false;
             this.btnConsultaMatricula.Click += new System.EventHandler(this.btnConsultaMatricula_Click);
             // 
@@ -115,6 +120,7 @@
             this.btnListaMatricula.Size = new System.Drawing.Size(262, 35);
             this.btnListaMatricula.TabIndex = 6;
             this.btnListaMatricula.Text = "Lista de matricula";
+            this.toolTipMensaje.SetToolTip(this.btnListaMatricula, "Muestra la lista de colaboradores matriculados según el curso");
             this.btnListaMatricula.UseVisualStyleBackColor = false;
             this.btnListaMatricula.Click += new System.EventHandler(this.btnListaMatricula_Click);
             // 
@@ -128,6 +134,7 @@
             this.btnHacerMatricula.Size = new System.Drawing.Size(262, 35);
             this.btnHacerMatricula.TabIndex = 5;
             this.btnHacerMatricula.Text = "Realizar matrícula";
+            this.toolTipMensaje.SetToolTip(this.btnHacerMatricula, "Asigna a un colaborador a un curso para la capacitación");
             this.btnHacerMatricula.UseVisualStyleBackColor = false;
             this.btnHacerMatricula.Click += new System.EventHandler(this.btnHacerMatricula_Click);
             // 
@@ -141,6 +148,7 @@
             this.btnConsultaListaCursos.Size = new System.Drawing.Size(262, 35);
             this.btnConsultaListaCursos.TabIndex = 4;
             this.btnConsultaListaCursos.Text = "Consultar lista de cursos";
+            this.toolTipMensaje.SetToolTip(this.btnConsultaListaCursos, "Muestra la lista de cursos que se imparten en capacitaciones");
             this.btnConsultaListaCursos.UseVisualStyleBackColor = false;
             this.btnConsultaListaCursos.Click += new System.EventHandler(this.btnConsultaListaCursos_Click);
             // 
@@ -154,6 +162,7 @@
             this.btnNuevaCapacitacion.Size = new System.Drawing.Size(262, 35);
             this.btnNuevaCapacitacion.TabIndex = 3;
             this.btnNuevaCapacitacion.Text = "Agregar nuevos cursos";
+            this.toolTipMensaje.SetToolTip(this.btnNuevaCapacitacion, "Agrega un nuevo curso para capacitaciones");
             this.btnNuevaCapacitacion.UseVisualStyleBackColor = false;
             this.btnNuevaCapacitacion.Click += new System.EventHandler(this.btnNuevaCapacitacion_Click);
             // 
@@ -167,6 +176,7 @@
             this.btnBuscarColaborador.Size = new System.Drawing.Size(262, 35);
             this.btnBuscarColaborador.TabIndex = 2;
             this.btnBuscarColaborador.Text = "Administrar a un colaborador";
+            this.toolTipMensaje.SetToolTip(this.btnBuscarColaborador, "Gestiona la información de un colaborador");
             this.btnBuscarColaborador.UseVisualStyleBackColor = false;
             this.btnBuscarColaborador.Click += new System.EventHandler(this.btnBuscarColaborador_Click);
             // 
@@ -180,6 +190,7 @@
             this.btnConsultarLista.Size = new System.Drawing.Size(262, 35);
             this.btnConsultarLista.TabIndex = 1;
             this.btnConsultarLista.Text = "Consultar lista de colaboradores\r\n";
+            this.toolTipMensaje.SetToolTip(this.btnConsultarLista, "Muestra la lista de colaboradores en capacitaciones");
             this.btnConsultarLista.UseVisualStyleBackColor = false;
             this.btnConsultarLista.Click += new System.EventHandler(this.btnConsultarLista_Click);
             // 
@@ -193,6 +204,7 @@
             this.btnAgregarColaborador.Size = new System.Drawing.Size(262, 35);
             this.btnAgregarColaborador.TabIndex = 0;
             this.btnAgregarColaborador.Text = "Agregar nuevos colaboradores";
+            this.toolTipMensaje.SetToolTip(this.btnAgregarColaborador, "Agrega a un colaborador a capacitaciones");
             this.btnAgregarColaborador.UseVisualStyleBackColor = false;
             this.btnAgregarColaborador.Click += new System.EventHandler(this.btnAgregarColaborador_Click);
             // 
@@ -365,25 +377,15 @@
             this.panel2.Size = new System.Drawing.Size(984, 488);
             this.panel2.TabIndex = 51;
             // 
-            // label11
+            // label3
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(411, 149);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(158, 27);
-            this.label11.TabIndex = 52;
-            this.label11.Text = "Capacitaciones";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(80, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 27);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "Colaboradores";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(761, 86);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 27);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Matrículas";
             // 
             // label2
             // 
@@ -395,15 +397,25 @@
             this.label2.TabIndex = 47;
             this.label2.Text = "Cursos";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(761, 86);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 27);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "Matrículas";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(80, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 27);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Colaboradores";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(411, 149);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(158, 27);
+            this.label11.TabIndex = 52;
+            this.label11.Text = "Capacitaciones";
             // 
             // FrmAdministradorCapacitaciones
             // 
@@ -470,5 +482,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip toolTipMensaje;
     }
 }

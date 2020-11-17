@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarNuevoColaborador));
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
@@ -64,6 +65,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxInsta = new System.Windows.Forms.PictureBox();
             this.pictureBoxFace = new System.Windows.Forms.PictureBox();
+            this.toolTipMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.PanelCapacitaciones.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -84,6 +86,7 @@
             this.btnLogOut.Size = new System.Drawing.Size(94, 32);
             this.btnLogOut.TabIndex = 5;
             this.btnLogOut.Text = "Log Out";
+            this.toolTipMensaje.SetToolTip(this.btnLogOut, "Presione para volver a la pantalla principal");
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
@@ -97,6 +100,7 @@
             this.btnRegresar.Size = new System.Drawing.Size(133, 35);
             this.btnRegresar.TabIndex = 1;
             this.btnRegresar.Text = "Volver al menú";
+            this.toolTipMensaje.SetToolTip(this.btnRegresar, "Presione para regresar al menú principal");
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
@@ -149,6 +153,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(131, 33);
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
+            this.toolTipMensaje.SetToolTip(this.btnCancelar, "Presione para limpiar los campos");
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -173,6 +178,7 @@
             this.btnGuardar.Size = new System.Drawing.Size(131, 33);
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
+            this.toolTipMensaje.SetToolTip(this.btnGuardar, "Presione para agregar al colaborador a las capacitaciones");
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -187,6 +193,7 @@
             this.btnVerificar.Size = new System.Drawing.Size(131, 33);
             this.btnVerificar.TabIndex = 17;
             this.btnVerificar.Text = "Verificar ID";
+            this.toolTipMensaje.SetToolTip(this.btnVerificar, "Presione para consultar al colaborador en la nómina");
             this.btnVerificar.UseVisualStyleBackColor = false;
             this.btnVerificar.Click += new System.EventHandler(this.btnVerificar_Click);
             // 
@@ -537,5 +544,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBoxInsta;
         private System.Windows.Forms.PictureBox pictureBoxFace;
+        private System.Windows.Forms.ToolTip toolTipMensaje;
     }
 }
